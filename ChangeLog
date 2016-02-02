@@ -1,0 +1,128 @@
+2014-01-05 GCONJUGUE-0.7.5 released
+
+	* src/Makefile.am: Avoid an useless dependency (Thanks to Eriberto Mota
+	Filho).
+
+	* README, src/callbacks.c: Update homepage address.
+
+2013-12-29 GCONJUGUE-0.7.4 released
+
+	* po/POTFILES.skip: New file (Eriberto Mota Filho).
+
+	* src/conjugue.c: Use glib.h (Eriberto Mota Filho).
+
+	* Makefile.am: Put documentation in correct place (Eriberto Mota Filho).
+
+	* data/gconjugue.desktop: Add keywords (Eriberto Mota Filho).
+
+2011-10-01 GCONJUGUE-0.7.3 released
+
+	* all: Ported the code to GTK+ 3.
+
+2009-01-02 GCONJUGUE-0.7.2 released
+
+	* BancoDeVerbos: Orthographic update based on the BrOffice orthographic
+	dictionary for vim. Changed paradigms: adequar, aguar, apaziguar,
+	apoiar, arguir, crer, dar, doer, estrear, magoar, moer, prover e ver.
+	Added hyphens: re-editar, re-eleger, re-embarcar, re-encarnar,
+	re-encontrar, re-engajar, re-entrar, re-enviar, re-escrever,
+	re-especificar, re-estruturar, re-examinar, re-expedir. Deleted umlauts:
+	aguentar, delinquir, equidistar, frequentar, liquefazer, redarguir,
+	sequenciar, sequestrar e tranquilizar.
+
+	* conjuge.c: Deleted paradigm "apoiar".
+
+	* callbacks.c: Orthographic update.
+
+	* BancoDeVerbos: Deleted apendar and added apender, academizar,
+	carpetar.
+
+2008-06-26 GCONJUGUE-0.7.1 released
+
+	* Makefile.am, src/conjugue.c: moved BancoDeVerbos to $libdir/gconjugue
+	(thanks to Eriberto Mota).
+
+	* README: Eliminated reference to version 2 of gpl license since now
+	gconjugue is distributed under version 3 (thanks to Eriberto Mota).
+
+	* BancoDeVerbos: Fixed conjugation of balir.
+
+2008-05-22 GCONJUGUE-0.7 released
+
+	* conjugue.c: New file containing functions to conjugate verbs. The
+	application conjugue is no longer called through a pipe.
+
+	* interface.c: Added main window icon. The button now calls the function
+	conjugar() when pressed and not when released.
+
+	* interface.c: Added menu items "List all verbs" and "List paradigms".
+
+	* po/pt.po: Added European Portuguese translations, which still need
+	revision, to avoid gconjugue running in English in some circumstances.
+
+	* BancoDeVerbos: Imported and modified
+	/usr/lib/brazilian-conjugate/verbos-UTF-8 from the Debian package
+	brazilian-conjugate.
+
+	* BancoDeVerbos: Fixed conjugation of some verbs: frigir, redigir,
+	coagir, interagir, enviuvar, abaular, estrear, intermediar, mobiliar,
+	faiscar, esmiuçar, apaziguar, averiguar, obliquar, adequar, comprazer,
+	moer, remoer, roer, corroer, entupir, desentupir, inquerir, suster,
+	requerer, precaver, concernir, desservir, resservir, afligir (and its
+	derivatives), cerzir, mugir, rugir, convergir, aspergir, urgir,
+	obstringir, sortir, engolir, espargir, advir (and derivatives),
+	extinguir, argüir, redargüir, embair, acupremir, premir, descolorir,
+	emergir, imergir, submergir, tinir, transir, ruir, puir, atingir,
+	distinguir, usufruir.
+
+	* BancoDeVerbos: Eliminated nonexistent verbs: fujir, serenizar,
+	corredimimir, exconjurar, indefinir, remansar, atraicionar, catalizar,
+	cavocar, convier, sossobrar, interrelacionar.
+
+2006-07-09 GCONJUGUE-0.6 released
+
+	* callbacks.c: The verb is converted into lower case before being
+	conjugated.
+
+	* main.c: If gconjugue receives a parameters at startup, it will try
+	to conjugate the first parameter, unless this parameter is "-h",
+	"--help", "-v", or "--version".
+
+	* all source files: The messages in the source code are now in English
+	and the use of gettext was activated.
+
+	* glade files: Eliminated from source code. The Glade Interface
+	Builder was useful to start the project but now I'll maintain the code
+	without it.
+
+2006-01-08 GCONJUGUE-0.4 released
+
+	* callbacks.c: Gconjugue was confused if there was either a space
+	before the word or more than one word in the GtkEntry. The program
+	would also either freeze or not work properly if the symbols &, ", ',
+	|, >, <, $ were included in the string as part of the verb. These bugs
+	were fixed.
+
+	* callbacks.c: Colorized text. No longer using temporary files: now
+	connecting with conjugue through a pipe. When conjugating the verb, the
+	GtkEntry text is automatically selected to make it easier to type a
+	new text.
+
+	* main.c: Added the creation of GtkTextBuffer tags: bold, red, blue,
+	and large.
+
+2005-12-28 GCONJUGUE-0.2 released
+
+	* callbacks.c: Fixed bug in GError usage.
+
+	* callbacks.c: Fixed bug when the user locale isn't iso-8859-1. The bug
+	was discovered by Luiz Carcerelli.
+	
+	* *.png: Red letter "V" replaced with an yellow one (green background).
+
+	* callbacks.c: Pressing <Enter> in the GtkEntry has the same effect of
+	  clicking in the button "conjugar" (suggestion made by Cárlisson
+	  Galdino).
+
+2005-12-20 GCONJUGUE-0.1 released
+

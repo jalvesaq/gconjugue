@@ -1,0 +1,43 @@
+
+LICENSE
+=======
+
+  GConjugue © 2006-2014 Jakson Alves de Aquino <jalvesaq@gmail.com>
+
+  All files without a copyright notice in this package (namely,
+  gconjugue.desktop, gconjugue.1, and gconjugue.png) are part of gconjugue and
+  are released under the same license.
+  
+  GConjugue is free software; you can redistribute it and/or modify it under the
+  terms of the GNU General Public License as published by the Free Software
+  Foundation; Please see the file COPYING for details.
+  
+
+
+COMPILING AND INSTALLING
+========================
+
+  In addition to a C compiler you will need the libraries and development
+  files for GTK+. On Debian or Debian based systems, like Ubuntu, install the
+  package "libgtk-3-dev" and its dependencies. On other systems the package
+  might be called "gtk3-devel".  The "configure" script will warn you about
+  missing dependencies. Please, see the file INSTALL for details.
+
+  To compile gconjugue do:
+  
+    ./configure
+    make
+    make install
+
+  The "make install" should be done as root.
+
+
+HOMEPAGE
+========
+
+  Portuguese:
+  http://www.lepem.ufc.br/jaa/gconjugue
+
+  English:
+  http://www.lepem.ufc.br/jaa/gconjugue/index.en.html
+

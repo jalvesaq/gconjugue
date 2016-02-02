@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=GConjugue
+Name[pt_BR]=GConjugue
+Comment=Conjugates Portuguese verbs
+Comment[pt_BR]=Conjuga verbos em português
+Exec=gconjugue
+Terminal=0
+Type=Application
+Icon=gconjugue.png
+StartupNotify=true
+Categories=Utility;
+Keywords=dictionary;Brazilian;Portuguese;verbs
