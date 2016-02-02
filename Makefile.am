@@ -4,7 +4,7 @@
 SUBDIRS = src po
 
 gconjuguedocdir = ${prefix}/share/doc/gconjugue
-gconjuguedoc_DATA = README
+gconjuguedoc_DATA = README.md
 
 man_MANS = data/gconjugue.1
 
