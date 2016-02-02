@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-05 13:29-0300\n"
-"PO-Revision-Date: 2014-01-05 13:28-0300\n"
+"POT-Creation-Date: 2016-02-02 19:36-0300\n"
+"PO-Revision-Date: 2016-02-02 18:15-0300\n"
 "Last-Translator: Jakson Alves de Aquino <jalvesaq@gmail.com>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
 "Language: \n"
@@ -40,19 +40,25 @@ msgstr "Listar todos os _paradigmas"
 msgid "List all _verbs"
 msgstr "Listas todos os _verbos"
 
-#: ../src/interface.c:156
+#. TODO: bring back the CTRL+Q accelerator to quit GConjugue. It was part of
+#. the deprecated code gtk_image_menu_item_new_from_stock("gtk-quit", accel_group);
+#: ../src/interface.c:154
+msgid "_Quit"
+msgstr "_Sair"
+
+#: ../src/interface.c:158
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../src/interface.c:163
+#: ../src/interface.c:165
 msgid "_Contents (in Portuguese)"
 msgstr "_Conteúdo"
 
-#: ../src/interface.c:167
+#: ../src/interface.c:169
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/interface.c:181
+#: ../src/interface.c:183
 msgid "conjugate"
 msgstr "conjugar"
 

@@ -36,13 +36,13 @@ GtkWidget *entry1;
 GtkWidget *btconjg;
 GtkWidget *scrolledwindow1;
 GtkWidget *textview1;
-GtkAccelGroup *accel_group;
+//GtkAccelGroup *accel_group;
 
 GtkWidget*
 create_window1 (void)
 {
 
-  accel_group = gtk_accel_group_new ();
+  //accel_group = gtk_accel_group_new ();
 
   window1 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (window1), _("GConjugue"));
@@ -149,7 +149,9 @@ create_window1 (void)
   gtk_widget_show (miListV);
   gtk_container_add (GTK_CONTAINER (menuitem1_menu), miListV);
 
-  miQuit = gtk_image_menu_item_new_from_stock ("gtk-quit", accel_group);
+  // TODO: bring back the CTRL+Q accelerator to quit GConjugue. It was part of
+  // the deprecated code gtk_image_menu_item_new_from_stock("gtk-quit", accel_group);
+  miQuit = gtk_menu_item_new_with_mnemonic(_("_Quit"));
   gtk_widget_show (miQuit);
   gtk_container_add (GTK_CONTAINER (menuitem1_menu), miQuit);
 
@@ -203,7 +205,7 @@ create_window1 (void)
   g_signal_connect((gpointer) entry1, "activate", G_CALLBACK (on_entry1_activate), NULL);
   g_signal_connect((gpointer) btconjg, "pressed", G_CALLBACK (on_btconjg_clicked),NULL);
 
-  gtk_window_add_accel_group (GTK_WINDOW (window1), accel_group);
+ // gtk_window_add_accel_group (GTK_WINDOW (window1), accel_group);
 
   return window1;
 }
