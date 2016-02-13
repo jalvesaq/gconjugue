@@ -2,12 +2,12 @@
 
 The application conjugates Portuguese verbs as spoken in Brazil:
 
-![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/screenshot_pt.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/master/screenshot_pt.png "Screenshot")
 
 When the entered expression is not a verb, GConjugue tries to find it among
 the conjugated forms of known verbs, as below:
 
-![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/screenshot_en.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/master/screenshot_en.png "Screenshot")
 
 If you are using Debian, Ubuntu or another Debian based distribution, you can
 install GConjugue from official repositories:
