@@ -1,10 +1,13 @@
 # GConjugue
 
-The application conjugates Portuguese verbs as spoken in Brazil. It is based
-on conjugue, a free software developed by
-[Ricardo Ueda Karpischek](http://www.ime.usp.br/~ueda/br.ispell/conjugue.html).
+The application conjugates Portuguese verbs as spoken in Brazil:
 
-![Screenshot](http://www.lepem.ufc.br/jaa/gconjugue/gconjugue-en.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/screenshot_pt.png "Screenshot")
+
+When the entered expression is not a verb, GConjugue tries to find it among
+the conjugated forms of known verbs, as below:
+
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/screenshot_en.png "Screenshot")
 
 If you are using Debian, Ubuntu or another Debian based distribution, you can
 install GConjugue from official repositories:
@@ -12,6 +15,13 @@ install GConjugue from official repositories:
 ```
 sudo apt-get install gconjugue
 ```
+
+You can get information on how the application works at the menu item
+*Help/Contents*.
+
+GConjugue is based on conjugue, a free software developed by
+[Ricardo Ueda Karpischek](http://www.ime.usp.br/~ueda/br.ispell/conjugue.html).
+
 
 ## Compiling and installing
 
@@ -56,4 +66,3 @@ for future development.
    - [gconjugue-0.7.4.tar.gz](https://drive.google.com/uc?export=download&id=0ByMBQcSs9G7KaTlZVmJoZXpVLTA) (md5sum d318301a45e06f30dbbd990cbcecfb1d)
 
 Even older versions were hosted at codigolivre.org.br (no longer online).
-

@@ -3,3 +3,4 @@
 src/main.c
 src/interface.c
 src/callbacks.c
+src/conjugue.c

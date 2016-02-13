@@ -1,3 +1,16 @@
+2016-02-13 GCONJUGUE-0.8.0 released
+
+	* data/paradigms_and_verbs: Renamed the file "BancoDeVerbos".
+
+	* Improvements:
+
+	  - Options for color and xml output in text mode.
+	  - Button to set font.
+	  - Seek for conjugated forms if the entered expression is not a verb
+	    in its infinitive form.
+	  - Rewrite in English all strings and provide Portuguese translations
+	    in the po files.
+
 2014-01-05 GCONJUGUE-0.7.5 released
 
 	* src/Makefile.am: Avoid an useless dependency (Thanks to Eriberto Mota

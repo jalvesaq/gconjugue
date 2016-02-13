@@ -1,5 +1,5 @@
 .pc
-.TH GCONJUGUE 1 "May 2008" "Version 0.7" "GCONJUGUE Manual Page"
+.TH GCONJUGUE 1 "May 2016" "Version 0.7.6" "GCONJUGUE Manual Page"
 .SH NAME
 gconjugue \- conjugator of Brazilian Portuguese verbs
 .SH SYNOPSIS
@@ -28,20 +28,22 @@ and
 .I todosOsVerbos
 where all verbs in the data base are conjugated.
 .TP
+\-c, \-\-color
+Use ANSI scape codes to colorize the output.
+.TP
+\-x, \-\-xml
+Output with xml tags.
+.TP
 verb
 Conjugates
 .I verb
 at startup, output the result to screen and exits.
 
-.SH FILE
-.TP
-~/.gconjugue
-This file saves the main window dimensions. It should not be edited manually.
-
 .SH "REPORTING BUGS"
-Report bugs to <jalvesaq@gmail.com>
+Report bugs at
+.BR https://github.com/jalvesaq/gconjugue/issues
 .SH COPYRIGHT
-Copyright \(co 2005-2008 Jakson A. Aquino
+Copyright \(co 2005-2016 Jakson A. Aquino
 .br
 GCONJUGUE comes with ABSOLUTELY NO WARRANTY; it is Free Software under GNU GPL.
 See the
@@ -49,7 +51,7 @@ See the
 file for details.
 .SH SEE ALSO
 .PP gconjugue home page:
-.BR http://jalvesaq.googlepages.com/gconjugue.en.html
+.BR https://github.com/jalvesaq/gconjugue
 .PP
 .SH AUTHOR
 .PP

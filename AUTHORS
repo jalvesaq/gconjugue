@@ -1,8 +1,8 @@
 gconjugue:
    Jakson Alves de Aquino <jalvesaq@gmail.com>
 
-BancoDeVerbos:
-   A lista de pessoas que contribuíram para o Dicionário br.ispell,
-   do qual foi importado o banco de verbos, pode ser encontrada em
+paradigms_and_verbs:
+   The br.ispell dictionary was the original source of the paradigms_and_verbs
+   file. Its list of contributors is available at
    http://www.ime.usp.br/~ueda/br.ispell/
 

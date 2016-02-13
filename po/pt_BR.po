@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-02 19:36-0300\n"
-"PO-Revision-Date: 2016-02-02 18:15-0300\n"
+"POT-Creation-Date: 2016-02-13 17:26-0300\n"
+"PO-Revision-Date: 2016-02-13 17:29-0300\n"
 "Last-Translator: Jakson Alves de Aquino <jalvesaq@gmail.com>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
 "Language: \n"
@@ -11,78 +11,211 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/main.c:40
+#: ../src/main.c:36
 #, c-format
 msgid "Usage:"
 msgstr "Uso:"
 
-#: ../src/main.c:41
+#: ../src/main.c:37
 msgid "verb"
 msgstr "verbo"
 
-#: ../src/main.c:44
+#: ../src/main.c:40
 msgid "Conjugate all verbs and exit"
 msgstr "Conjuga todos os verbos e sai"
 
-#: ../src/interface.c:48
+#: ../src/main.c:74
+#, c-format
+msgid "Invalid option for setting the output!\n"
+msgstr "Opção inválida para configuração do resultado!\n"
+
+#: ../src/main.c:84
+#, c-format
+msgid "Too many arguments to gconjugue!\n"
+msgstr "Número excessivo de argumentos para o gconjugue!\n"
+
+#: ../src/interface.c:66
 msgid "GConjugue"
 msgstr "GConjugue"
 
-#: ../src/interface.c:137
+#: ../src/interface.c:155
 msgid "_Program"
 msgstr "_Programa"
 
-#: ../src/interface.c:144
+#: ../src/interface.c:162
+msgid "Set _font"
+msgstr "Configure a fonte"
+
+#: ../src/interface.c:166
 msgid "List all _paradigms"
 msgstr "Listar todos os _paradigmas"
 
-#: ../src/interface.c:148
+#: ../src/interface.c:170
 msgid "List all _verbs"
 msgstr "Listas todos os _verbos"
 
-#. TODO: bring back the CTRL+Q accelerator to quit GConjugue. It was part of
-#. the deprecated code gtk_image_menu_item_new_from_stock("gtk-quit", accel_group);
-#: ../src/interface.c:154
+#: ../src/interface.c:174
 msgid "_Quit"
 msgstr "_Sair"
 
-#: ../src/interface.c:158
+#: ../src/interface.c:180
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../src/interface.c:165
-msgid "_Contents (in Portuguese)"
+#: ../src/interface.c:187
+msgid "_Contents"
 msgstr "_Conteúdo"
 
-#: ../src/interface.c:169
+#: ../src/interface.c:191
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/interface.c:183
+#: ../src/interface.c:224
 msgid "conjugate"
 msgstr "conjugar"
 
-#: ../src/callbacks.c:41
-#, c-format
-msgid "gconjugue: could not write configuration file \"%s\".\n"
-msgstr "gconjugue: não foi possível salvar o arquivo de configuração “%s”.\n"
+#: ../src/interface.c:234 ../src/callbacks.c:299
+msgid "Set font"
+msgstr "Configure a fonte"
 
-#: ../src/callbacks.c:50 ../src/callbacks.c:54
-#, c-format
+#: ../src/callbacks.c:130
+msgid "Help"
+msgstr "Ajuda"
+
+#: ../src/callbacks.c:131
 msgid ""
-"gconjugue: FATAL ERROR:\n"
-"\n"
-"%s\n"
+"GConjugue loads at startup a dataset of some conjugated verbs which are used "
+"as paradigms for conjugating the other verbs that are in the dataset. Some "
+"verbs are explicitly listed as followers of a paradigm, but others are only "
+"listed as existing verbs. The software will try to deduce what paradigm "
+"should be used to conjugate these verbs as well any other expression typed "
+"by the user."
 msgstr ""
-"gconjugue: ERRO FATAL:\n"
-"\n"
-"%s\n"
+"Ao iniciar, o GConjugue carrega um banco de dados contendo verbos "
+"conjugados. Esses verbos são usados como paradigmas para a conjugação dos "
+"demais verbos presentes no banco. Alguns dos verbos estão explicitamente "
+"listados como seguidores de um dos paradigmas, mas outros estão listados "
+"apenas como verbos existentes. O programa atribui um paradigma para esses "
+"verbos, bem como a qualquer verbo digitado pelo usuário."
 
-#: ../src/callbacks.c:200
+#: ../src/callbacks.c:138
+msgid ""
+"GConjugue presents the following information before the conjugation of verbs:"
+msgstr ""
+"O GConjugue apresenta a seguinte informação antes da conjugação dos verbos:"
+
+#: ../src/callbacks.c:141
+msgid "Paradigm: <verb>"
+msgstr "Paradigma: <verbo>"
+
+#: ../src/callbacks.c:143
+msgid ""
+"Indicates what verb was used as paradigm for the conjugation; either the "
+"verb itself is a paradigm or it is explicitly listed as follower of a "
+"paradigm."
+msgstr ""
+"Indica qual verbo serve de paradigma para a conjugação; ou o próprio verbo "
+"conjugado é um paradigma ou está explicitamente listado como seguidor do "
+"paradigma."
+
+#: ../src/callbacks.c:147
+msgid "Deduced paradigm: <verb>"
+msgstr "Paradigma deduzido: <verbo>"
+
+#: ../src/callbacks.c:149
+msgid ""
+"The verb is in the dataset, but it is not classified. Its paradigm was "
+"“calculated” by the software."
+msgstr ""
+"O verbo está presente no banco, mas não está classificado. Seu paradigma foi "
+"“calculado” pelo programa."
+
+#: ../src/callbacks.c:152
+msgid "Not in the verbs dataset"
+msgstr "Não consta do banco de verbos"
+
+#: ../src/callbacks.c:154
+msgid ""
+"Although not in the dataset, the verb entered by the user will be conjugated "
+"if it is possible to deduce its paradigm."
+msgstr ""
+"Mesmo não constando do banco de verbos, o verbo fornecido pelo usuário "
+"poderá ser conjugado se for possível calcular um paradigma para ele."
+
+#: ../src/callbacks.c:157
+msgid "I cannot conjugate <verb>"
+msgstr "Não sei conjugar <verbo>"
+
+#: ../src/callbacks.c:159
+msgid ""
+"GConjugue could not guess what is the proper paradigm for the expression the "
+"user entered. This should happen only when the expression cannot be treated "
+"as verb in Portuguese, such as words that do not end in ‘r’."
+msgstr ""
+"O GConjugue não conseguiu relacionar nenhum paradigma com a expressão "
+"fornecida pelo usuário. Isto somente deve acontecer com termos cujo "
+"tratamento como verbo é impossível na língua portuguesa (palavras não "
+"terminadas com a letra ‘r’, por exemplo)."
+
+#: ../src/callbacks.c:164
+msgid ""
+"The number of existing paradigms in GConjugue dataset is higher than the "
+"number of paradigms recognized by the Portuguese normative grammar because "
+"GConjugue is not as smart as a human grammarian to apply general rules to "
+"exceptional cases."
+msgstr ""
+"O número de paradigmas existente no banco de verbos do GConjugue é superior "
+"ao número de paradigmas reconhecidos pela gramática normativa da língua "
+"portuguesa porque o algoritmo do GConjugue não é tão esperto quanto um "
+"gramático humano para regras gerais a exceções específicas."
+
+#: ../src/callbacks.c:169
+msgid ""
+"Verbs not classified in the dataset as followers of a paradigm have their "
+"paradigms deduced through the comparison of its end with the last letters of "
+"some verbs. The comparisons are made in the following sequence, and are "
+"interrupted as soon as match is found:"
+msgstr ""
+"Um verbo não classificado no próprio banco como seguidor de um dos "
+"paradigmas, tem seu paradigma deduzido pelo programa pela comparação da sua "
+"terminação com a de alguns verbos. As comparações são feitas na sequência "
+"abaixo e são interrompidas quando é encontrada uma coincidência de "
+"terminações:"
+
+#: ../src/callbacks.c:195
+msgid "Currently, the dataset has:"
+msgstr "Atualmente, o banco de verbos tem:"
+
+#: ../src/callbacks.c:197
+msgid "- Verbs treated as paradigms: "
+msgstr "- Verbos usados como paradigmas: "
+
+#: ../src/callbacks.c:201
+msgid "- Verbs following paradigms: "
+msgstr "- Verbos seguindo paradigmas: "
+
+#: ../src/callbacks.c:205
+msgid "- Verbs not classified yet: "
+msgstr "- Verbos não classificados ainda: "
+
+#: ../src/callbacks.c:209
+msgid "If you are curious to see the dataset of verbs, please, open the file:"
+msgstr "Se tiver curiosidade de ver o banco de verbos, abra o arquivo:"
+
+#: ../src/callbacks.c:214
+msgid ""
+"GConjugue might also be run from a terminal emulator as a text only "
+"application. If you want more information on this feature, do in a terminal "
+"emulator:"
+msgstr ""
+"O GConjugue também pode ser executado em um terminal, em modo texto. Se "
+"desejar mais informações sobre essa funcionalidade, digite num terminal:"
+
+#: ../src/callbacks.c:227
 #, c-format
 msgid ""
 "gconjugue %s\n"
-"(c) 2005-2014 Jakson A. Aquino <jalvesaq@gmail.com>\n"
+"(c) 2005-2016 Jakson A. Aquino <jalvesaq@gmail.com>\n"
 "\n"
 "gconjugue is based on \"conjugue\", which was developed by Ricardo Ueda "
 "Karpischek\n"
@@ -90,21 +223,150 @@ msgid ""
 "gconjugue is free software under GNU GPL license.\n"
 "\n"
 "Homepage:\n"
-"http://www.lepem.ufc.br/jaa/gconjugue"
+"https://github.com/jalvesaq/gconjugue"
 msgstr ""
 "gconjugue %s\n"
-"© 2005-2014 Jakson A. Aquino <jalvesaq@gmail.com>\n"
+"© 2005-2016 Jakson A. Aquino <jalvesaq@gmail.com>\n"
 "\n"
 "gconjugue é baseado no “conjugue”, desenvolvido por Ricardo Ueda Karpischek\n"
 "\n"
 "gconjugue é software livre sob a licença GNU GPL.\n"
 "Homepage:\n"
-"http://www.lepem.ufc.br/jaa/gconjugue"
+"https://github.com/jalvesaq/gconjugue"
 
-#: ../src/callbacks.c:243
+#: ../src/callbacks.c:246
 msgid ""
-"I can't conjugate the preposition \"<b>por</b>\". Would you like to have its "
-"homonym verb conjugated?"
+"I can't conjugate the preposition “<b>por</b>”. Would you like to have the "
+"verb “<b>pôr</b>” conjugated?"
 msgstr ""
 "Não posso conjugar a preposição “<b>por</b>”. Gostaria que eu conjugasse o "
 "verbo “<b>pôr</b>”?"
+
+#: ../src/callbacks.c:268
+msgid "GConjugue internal error: Invalid unicode characters!"
+msgstr "Erro interno do GConjugue: Caracteres unicode inválidos!"
+
+#: ../src/conjugue.c:296
+#, c-format
+msgid ""
+"“%s” was found among conjugated forms of 1 verb:\n"
+"\n"
+msgstr ""
+"“%s” foi encontrado entre as formas conjugadas de 1 verbo:\n"
+"\n"
+
+#: ../src/conjugue.c:298
+#, c-format
+msgid ""
+"“%s” was found conjugated in %d verbs:\n"
+"\n"
+msgstr ""
+"“%s” foi encontrado conjugado em %d verbos:\n"
+"\n"
+
+#: ../src/conjugue.c:301
+#, c-format
+msgid ""
+"“%s” was not found among the conjugated forms of any verb.\n"
+"\n"
+msgstr ""
+"“%s” não foi encontrado entre as formas conjugadas de nenhum verbo.\n"
+"\n"
+
+#: ../src/conjugue.c:317
+#, c-format
+msgid "Maximo number of verbs surpassed!\n"
+msgstr "Número máximo de verbos superado!\n"
+
+#: ../src/conjugue.c:355
+msgid "The text you entered is too long.\n"
+msgstr "O texto digitado é muito longo.\n"
+
+#: ../src/conjugue.c:358
+msgid "The text you entered is too short.\n"
+msgstr "O texto digitado é muito curto.\n"
+
+#: ../src/conjugue.c:393 ../src/conjugue.c:397
+msgid "The text you entered has invalid characters.\n"
+msgstr "O texto digitado tem caracteres inválidos.\n"
+
+#: ../src/conjugue.c:434
+#, c-format
+msgid "“%s” is not a verb or is not in the infinitive form.\n"
+msgstr "“%s” não é um verbo ou não está no infinitivo.\n"
+
+#: ../src/conjugue.c:444
+#, c-format
+msgid "“%s” is not in the verbs dataset.\n"
+msgstr "“%s” não consta do banco de verbos.\n"
+
+#: ../src/conjugue.c:448
+#, c-format
+msgid ""
+"Paradigm: %s\n"
+"\n"
+msgstr ""
+"Paradigma: %s\n"
+"\n"
+
+#: ../src/conjugue.c:452
+#, c-format
+msgid ""
+"Deduced paradigm: %s\n"
+"\n"
+msgstr ""
+"Paradigma deduzido: %s\n"
+"\n"
+
+#: ../src/conjugue.c:454
+#, c-format
+msgid "I do not know how to conjugate “%s”.\n"
+msgstr "Não sei conjugar “%s”.\n"
+
+#: ../src/conjugue.c:460
+#, c-format
+msgid ""
+"Note: “%s” is irregular and defective, being conjugated only in the third "
+"persons (singular and plural). However, the complete conjugation is being "
+"outputted here because “%s-se” is conjugated in all persons.\n"
+"\n"
+msgstr ""
+"Observação: Doer e condoer são irregulares e defectivos, só se conjugando "
+"nas terceiras pessoas. Por outro lado, doer-se e condoer-se conjugam-se em "
+"todas as pessoas, por isso a conjugação completa é apresentada a seguir.\n"
+"\n"
+
+#: ../src/conjugue.c:555
+#, c-format
+msgid "Maximum number of paradigms surpassed!\n"
+msgstr "Número máximo de paradigmas superado!\n"
+
+#: ../src/conjugue.c:647
+#, c-format
+msgid "Error: \"%s\" not found.\n"
+msgstr "Erro: \"%s\" não encontrado.\n"
+
+#: ../src/conjugue.c:887
+msgid "paradigms"
+msgstr "paradigmas"
+
+#: ../src/conjugue.c:887
+msgid "verbs"
+msgstr "verbos"
+
+#: ../src/conjugue.c:888
+#, c-format
+msgid "See the files %s, %s, and %s"
+msgstr "Veja os arquivos %s, %s, e %s"
+
+#: ../src/conjugue.c:916
+msgid "Paradigmatic verbs and their followers"
+msgstr "Verbos paradigmáticos e seus seguidores"
+
+#: ../src/conjugue.c:949
+msgid "Verbs with deduced paradigms"
+msgstr "Verbos com paradigmas deduzidos"
+
+#: ../src/conjugue.c:983
+msgid "Verbs used as paradigms"
+msgstr "Verbos usados como paradigmas"

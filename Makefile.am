@@ -15,7 +15,7 @@ appicondir = $(datadir)/pixmaps
 appicon_DATA = data/gconjugue.png
 
 verbdir = $(libdir)/gconjugue
-verb_DATA = data/BancoDeVerbos
+verb_DATA = data/paradigms_and_verbs
 
 # INTLTOOL_FILES = intltool-extract.in \
 #         intltool-merge.in \
