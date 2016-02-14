@@ -868,13 +868,13 @@ void conjugue_all()
     char b[20000];
     char b2[20000];
 
-    FILE *P = fopen("listaDeParadigmas", "w");
+    FILE *P = fopen(_("list_of_paradigms"), "w");
     for(i = 0; i < NP; i++)
         fprintf(P, "%s\n", Prdgm[i]->noun);
     fclose(P);
 
-    FILE *F = fopen("listaDeVerbos", "w");
-    FILE *C = fopen("todosOsVerbos", "w");
+    FILE *F = fopen(_("list_of_verbs"), "w");
+    FILE *C = fopen(_("all_verbs"), "w");
     for(i = 0; i < NV; i++){
         conjugue(Vrb[i].v, b);
         clean_text_buffer(b2, b);
@@ -884,9 +884,9 @@ void conjugue_all()
     fclose(F);
     fclose(C);
 
-    fprintf(stderr, "%s = %d, %s = %d\n", _("paradigms"), NP, _("verbs"), NV);
-    fprintf(stderr, _("See the files %s, %s, and %s"), "“listaDeVerbos”",
-            "“listaDeParadigmas”", "“todosOsVerbos”\n");
+    fprintf(stderr, "%s = %d\n%s = %d\n", _("paradigms"), NP, _("verbs"), NV);
+    fprintf(stderr, _("See the files: “%s”, “%s” and “%s”.\n"), _("list_of_verbs"),
+            _("list_of_paradigms"), _("all_verbs"));
 }
 
 static int compare_verbs(const void *a, const void *b)

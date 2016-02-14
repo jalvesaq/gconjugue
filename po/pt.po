@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-13 17:26-0300\n"
-"PO-Revision-Date: 2016-02-13 17:29-0300\n"
+"POT-Creation-Date: 2016-02-14 09:38-0300\n"
+"PO-Revision-Date: 2016-02-14 09:39-0300\n"
 "Last-Translator: Jakson Alves de Aquino <jalvesaq@gmail.com>\n"
 "Language-Team: Português <pt@li.org>\n"
 "Language: \n"
@@ -346,6 +346,18 @@ msgstr "Número máximo de paradigmas superado!\n"
 msgid "Error: \"%s\" not found.\n"
 msgstr "Erro: \"%s\" não encontrado.\n"
 
+#: ../src/conjugue.c:871 ../src/conjugue.c:889
+msgid "list_of_paradigms"
+msgstr "lista_de_paradigmas"
+
+#: ../src/conjugue.c:876 ../src/conjugue.c:888
+msgid "list_of_verbs"
+msgstr "lista_de_verbos"
+
+#: ../src/conjugue.c:877 ../src/conjugue.c:889
+msgid "all_verbs"
+msgstr "todos_os_verbos"
+
 #: ../src/conjugue.c:887
 msgid "paradigms"
 msgstr "paradigmas"
@@ -356,8 +368,8 @@ msgstr "verbos"
 
 #: ../src/conjugue.c:888
 #, c-format
-msgid "See the files %s, %s, and %s"
-msgstr "Veja os ficheiros %s, %s, e %s"
+msgid "See the files: “%s”, “%s” and “%s”.\n"
+msgstr "Veja os ficheiros: “%s” “%s” e “%s”.\n"
 
 #: ../src/conjugue.c:916
 msgid "Paradigmatic verbs and their followers"
