@@ -304,7 +304,9 @@ void create_main_window()
                 if(FontDesc[i] == '\n' || FontDesc[i] == '\r')
                     FontDesc[i] = 0;
             PangoFontDescription *font_desc = pango_font_description_from_string(FontDesc);
-            gtk_widget_modify_font(textview1, font_desc); // TODO: replace this deprecated code.
+            // FIXME: The code below uses a deprecated function (GDK_DEPRECATED_IN_3_16)
+            // gedit still uses this function too (gedit-view.c, around line 1000).
+            gtk_widget_override_font(textview1, font_desc);
             pango_font_description_free(font_desc);
         }
         fclose(F);

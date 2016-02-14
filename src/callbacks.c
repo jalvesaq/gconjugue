@@ -287,7 +287,8 @@ void on_font_selected()
 {
     gchar *fdesc = gtk_font_chooser_get_font(GTK_FONT_CHOOSER(fdlg));
     PangoFontDescription *font_desc = pango_font_description_from_string(fdesc);
-    gtk_widget_modify_font(textview1, font_desc); // TODO: replace this deprecated code.
+    // FIXME: gtk_widget_override_font is deprecated (see note in interface.c)
+    gtk_widget_override_font(textview1, font_desc);
     pango_font_description_free(font_desc);
     write_info_in_cache_dir("font_desc", fdesc);
     strncpy(FontDesc, fdesc, 127);
