@@ -10,7 +10,8 @@
 #ifndef CONJUGUE_PTBR_H
 #define CONJUGUE_PTBR_H
 
-#include <glib/gi18n.h>
+#include <libintl.h>
+#define _(string) gettext (string)
 
 extern void fix_entry(char *dest, const char *src, char *msg);
 extern void conjugue(char *verb, char *buffer);
@@ -22,7 +23,8 @@ extern void xml_text_buffer(char *dest, char *src);
 extern void list_verbs(char *buffer);
 extern void list_prdgms(char *buffer);
 
-extern int NV, NP, NVC;
+extern int NV, NP, NVC; // Number of verbs, paradigms and classified verbs
+extern int Normative;  // Follow normative grammar rules
 extern char *verbsFile;
 
 typedef struct {

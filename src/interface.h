@@ -13,6 +13,7 @@
 extern GtkWidget *mainWindow;
 extern GtkWidget *entry1;
 extern GtkWidget *textview1;
+extern GtkWidget *btCommon;
 extern char FontDesc[128];
 extern int initWidth, initHeight;
 

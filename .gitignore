@@ -63,5 +63,7 @@ src/.deps/
 src/Makefile
 src/Makefile.in
 src/gconjugue
+src/conjugar
+src/tags
 stamp-h1
 gconjugue-*.tar.gz

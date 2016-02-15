@@ -9,6 +9,13 @@ the conjugated forms of known verbs, as below:
 
 ![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/master/screenshot_en.png "Screenshot")
 
+It also has the option of conjugating verbs as ordinary Brazilians do. In
+fact, Brazilians of different regions deviate from the normative grammar in
+different ways, but the conjugation displayed will already help foreigners to
+grasp what Brazilians are saying:
+
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/gconjugue/master/screenshot_br.png "Screenshot")
+
 If you are using Debian, Ubuntu or another Debian based distribution, you can
 install GConjugue from official repositories:
 
@@ -17,7 +24,7 @@ sudo apt-get install gconjugue
 ```
 
 You can get information on how the application works at the menu item
-*Help/Contents*.
+*Help/Contents* (whose source code is in `src/callbacks.c`).
 
 GConjugue is based on conjugue, a free software developed by
 [Ricardo Ueda Karpischek](http://www.ime.usp.br/~ueda/br.ispell/conjugue.html).
@@ -25,10 +32,15 @@ GConjugue is based on conjugue, a free software developed by
 
 ## Compiling and installing
 
+Two binaries are generated from the source code: `gconjugue` (GTK+
+application) and `conjugar` (text only application). Most users will be
+interested in `gconjugue`, but those wanting to use the output in other
+applications, such as a web page, have to run `conjugar`.
+
 In addition to a C compiler you will need the libraries and development files
-for GTK+. On Debian or Debian based systems, like Ubuntu, install the package
-*libgtk-3-dev* and its dependencies. On other systems the package might be
-called *gtk3-devel*.
+for GTK+ to build `gconjugue`. On Debian or Debian based systems, like Ubuntu,
+install the package *libgtk-3-dev* and its dependencies. On other systems the
+package might be called *gtk3-devel*.
   
 ### Released versions
 
@@ -44,12 +56,24 @@ sudo make install
 
 ### Development version
 
-To build and install the development version, do:
+To build and install the development version, before the commands above, do:
 
 ```
 ./autogen.sh
-make
-sudo make install
+```
+
+## GTK+ GUI and TUI
+
+If you do not want to build the GTK+ Graphical User Interface do:
+
+```
+./configure --enable-gtkgui=no
+```
+
+If you do not need the Text User Interface, do:
+
+```
+./configure --enable-tui=no
 ```
 
 The file LeiaMe.md (in Portuguese) has additional information and some ideas

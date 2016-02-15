@@ -11,12 +11,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
-#include <glib.h>
+//#include <glib.h>
 
 #include "conjugue.h"
 
 int NP, NV, NVC; // number of paradigms and number of verbs
 int sorted = 0;
+int Normative = 1;
 char *verbsFile;
 Paradigm **Prdgm;
 Verb *Vrb;
@@ -321,7 +322,8 @@ static void add_verb(const char *b, Paradigm *P, char *abndnt)
 
 static int get_verb_idx(const char *v)
 {
-    // TODO: qsort and binary search or verbs in a tree.
+    // There is no need of quick sort and binary search because sequential
+    // search is alread quick enough.
     int i;
     for(i = 0; i < NV; i++)
         if(strcmp(Vrb[i].v, v) == 0)
@@ -330,20 +332,113 @@ static int get_verb_idx(const char *v)
 
 }
 
-static void add_six_lines(char *buffer, char **piece)
+static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn)
 {
-    if(piece[0])
-        add_to_buffer(buffer, "   \2eu\6 %s\n", piece[0]);
-    if(piece[1])
-        add_to_buffer(buffer, "   \2tu\6 %s\n", piece[1]);
-    if(piece[2])
-        add_to_buffer(buffer, "   \2ele\6 %s\n", piece[2]);
-    if(piece[3])
-        add_to_buffer(buffer, "   \2nós\6 %s\n", piece[3]);
-    if(piece[4])
-        add_to_buffer(buffer, "   \2vós\6 %s\n", piece[4]);
-    if(piece[5])
-        add_to_buffer(buffer, "   \2eles\6 %s\n", piece[5]);
+    add_to_buffer(buffer, "\n\4");
+    add_to_buffer(buffer, tempo);
+    add_to_buffer(buffer, "\6\n");
+
+    if(Normative){
+        if(t== 'a'){
+            if(piece[0])
+                add_to_buffer(buffer, "   %s \2tu\6\n", piece[0]);
+            if(piece[1])
+                add_to_buffer(buffer, "   %s \2ele\6\n", piece[1]);
+            if(piece[2])
+                add_to_buffer(buffer, "   %s \2nós\6\n", piece[2]);
+            if(piece[3])
+                add_to_buffer(buffer, "   %s \2vós\6\n", piece[3]);
+            if(piece[4])
+                add_to_buffer(buffer, "   %s \2eles\6\n", piece[4]);
+        } else if(t== 'n'){
+            if(piece[0])
+                add_to_buffer(buffer, "   não %s \2tu\6\n", piece[0]);
+            if(piece[1])
+                add_to_buffer(buffer, "   não %s \2ele\6\n", piece[1]);
+            if(piece[2])
+                add_to_buffer(buffer, "   não %s \2nós\6\n", piece[2]);
+            if(piece[3])
+                add_to_buffer(buffer, "   não %s \2vós\6\n", piece[3]);
+            if(piece[4])
+                add_to_buffer(buffer, "   não %s \2eles\6\n", piece[4]);
+        } else {
+            if(piece[0])
+                add_to_buffer(buffer, "   \2eu\6 %s\n", piece[0]);
+            if(piece[1])
+                add_to_buffer(buffer, "   \2tu\6 %s\n", piece[1]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2ele\6 %s\n", piece[2]);
+            if(piece[3])
+                add_to_buffer(buffer, "   \2nós\6 %s\n", piece[3]);
+            if(piece[4])
+                add_to_buffer(buffer, "   \2vós\6 %s\n", piece[4]);
+            if(piece[5])
+                add_to_buffer(buffer, "   \2eles\6 %s\n", piece[5]);
+        }
+    } else {
+        if(t== 'a'){
+            if(piece[1])
+                add_to_buffer(buffer, "   %s \2você\6\n", piece[1]);
+            if(piece[1])
+                add_to_buffer(buffer, "   %s \2ele\6\n", piece[1]);
+            if(piece[1])
+                add_to_buffer(buffer, "   %s \2a gente\6\n", piece[1]);
+            if(piece[4])
+                add_to_buffer(buffer, "   %s \2vocês\6\n", piece[4]);
+            if(piece[4])
+                add_to_buffer(buffer, "   %s \2eles\6\n", piece[4]);
+        } else if(t== 'n'){
+            if(piece[1])
+                add_to_buffer(buffer, "   não %s \2você\6\n", piece[1]);
+            if(piece[1])
+                add_to_buffer(buffer, "   não %s \2ele\6\n", piece[1]);
+            if(piece[1])
+                add_to_buffer(buffer, "   não %s \2a gente\6\n", piece[1]);
+            if(piece[4])
+                add_to_buffer(buffer, "   não %s \2vocês\6\n", piece[4]);
+            if(piece[4])
+                add_to_buffer(buffer, "   não %s \2eles\6\n", piece[4]);
+        } else if(t== 'm'){
+            if(piece[0])
+                add_to_buffer(buffer, "   \2eu\6 tinha %s\n", fn[2]);
+            if(piece[1])
+                add_to_buffer(buffer, "   \2você\6 tinha %s\n", fn[2]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2ele\6 tinha %s\n", fn[2]);
+            if(piece[3])
+                add_to_buffer(buffer, "   \2a gente\6 tinha %s\n", fn[2]);
+            if(piece[4])
+                add_to_buffer(buffer, "   \2vocês\6 tinham %s\n", fn[2]);
+            if(piece[5])
+                add_to_buffer(buffer, "   \2eles\6 tinham %s\n", fn[2]);
+        } else if(t== 'i'){
+            if(piece[0])
+                add_to_buffer(buffer, "   \2eu\6 vou %s\n", fn[0]);
+            if(piece[1])
+                add_to_buffer(buffer, "   \2você\6 vai %s\n", fn[0]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2ele\6 vai %s\n", fn[0]);
+            if(piece[3])
+                add_to_buffer(buffer, "   \2a gente\6 vai %s\n", fn[0]);
+            if(piece[4])
+                add_to_buffer(buffer, "   \2vocês\6 vão %s\n", fn[0]);
+            if(piece[5])
+                add_to_buffer(buffer, "   \2eles\6 vão %s\n", fn[0]);
+        } else {
+            if(piece[0])
+                add_to_buffer(buffer, "   \2eu\6 %s\n", piece[0]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2você\6 %s\n", piece[2]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2ele\6 %s\n", piece[2]);
+            if(piece[2])
+                add_to_buffer(buffer, "   \2a gente\6 %s\n", piece[2]);
+            if(piece[5])
+                add_to_buffer(buffer, "   \2vocês\6 %s\n", piece[5]);
+            if(piece[5])
+                add_to_buffer(buffer, "   \2eles\6 %s\n", piece[5]);
+        }
+    }
 }
 
 void fix_entry(char *dest, const char *src, char *msg)
@@ -475,59 +570,19 @@ void conjugue(char *verb, char *buffer)
     else
         add_to_buffer(buffer, "\n");
 
-    add_to_buffer(buffer, "\n\4Presente do Indicativo\6\n");
-    add_six_lines(buffer, vv->PI);
+    add_tempo(buffer, "Presente do Indicativo",            vv->PI,   0,   NULL);
+    add_tempo(buffer, "Imperfeito do Indicativo",          vv->II,   0,   NULL);
+    add_tempo(buffer, "Perfeito do Indicativo",            vv->EI,   0,   NULL);
+    add_tempo(buffer, "Mais-que-perfeito do Indicativo",   vv->MI, 'm', vv->FN);
+    add_tempo(buffer, "Futuro do Pretérito do Indicativo", vv->TI,   0,   NULL);
+    add_tempo(buffer, "Futuro do Presente do Indicativo",  vv->FI, 'i', vv->FN);
+    add_tempo(buffer, "Presente do Subjuntivo",            vv->PS,   0,   NULL);
+    add_tempo(buffer, "Imperfeito do Subjuntivo",          vv->IS,   0,   NULL);
+    add_tempo(buffer, "Futuro do Subjuntivo",              vv->FS,   0,   NULL);
+    add_tempo(buffer, "Imperativo Afirmativo",             vv->IA, 'a',   NULL);
+    add_tempo(buffer, "Imperativo Negativo",               vv->IN, 'n',   NULL);
+    add_tempo(buffer, "Infinitivo Pessoal",                vv->IP,   0,   NULL);
 
-    add_to_buffer(buffer, "\n\4Imperfeito do Indicativo\6\n");
-    add_six_lines(buffer, vv->II);
-
-    add_to_buffer(buffer, "\n\4Perfeito do Indicativo\6\n");
-    add_six_lines(buffer, vv->EI);
-
-    add_to_buffer(buffer, "\n\4Mais-que-perfeito do Indicativo\6\n");
-    add_six_lines(buffer, vv->MI);
-
-    add_to_buffer(buffer, "\n\4Futuro do Pretérito do Indicativo\6\n");
-    add_six_lines(buffer, vv->TI);
-
-    add_to_buffer(buffer, "\n\4Futuro do Presente do Indicativo\6\n");
-    add_six_lines(buffer, vv->FI);
-
-    add_to_buffer(buffer, "\n\4Presente do Subjuntivo\6\n");
-    add_six_lines(buffer, vv->PS);
-
-    add_to_buffer(buffer, "\n\4Imperfeito do Subjuntivo\6\n");
-    add_six_lines(buffer, vv->IS);
-
-    add_to_buffer(buffer, "\n\4Futuro do Subjuntivo\6\n");
-    add_six_lines(buffer, vv->FS);
-
-    add_to_buffer(buffer, "\n\4Imperativo Afirmativo\6\n");
-    if(vv->IA[0])
-        add_to_buffer(buffer, "   %s \2tu\6\n", vv->IA[0]);
-    if(vv->IA[1])
-        add_to_buffer(buffer, "   %s \2ele\6\n", vv->IA[1]);
-    if(vv->IA[2])
-        add_to_buffer(buffer, "   %s \2nós\6\n", vv->IA[2]);
-    if(vv->IA[3])
-        add_to_buffer(buffer, "   %s \2vós\6\n", vv->IA[3]);
-    if(vv->IA[4])
-        add_to_buffer(buffer, "   %s \2eles\6\n", vv->IA[4]);
-
-    add_to_buffer(buffer, "\n\4Imperativo Negativo\6\n");
-    if(vv->IN[0])
-        add_to_buffer(buffer, "   não %s \2tu\6\n", vv->IN[0]);
-    if(vv->IN[1])
-        add_to_buffer(buffer, "   não %s \2ele\6\n", vv->IN[1]);
-    if(vv->IN[2])
-        add_to_buffer(buffer, "   não %s \2nós\6\n", vv->IN[2]);
-    if(vv->IN[3])
-        add_to_buffer(buffer, "   não %s \2vós\6\n", vv->IN[3]);
-    if(vv->IN[4])
-        add_to_buffer(buffer, "   não %s \2eles\6\n", vv->IN[4]);
-
-    add_to_buffer(buffer, "\n\4Infinitivo Pessoal\6\n");
-    add_six_lines(buffer, vv->IP);
     free_conjugated_verb(vv);
 }
 
@@ -893,14 +948,14 @@ static int compare_verbs(const void *a, const void *b)
 {
     const Verb *c = (const Verb*)a;
     const Verb *d = (const Verb*)b;
-    return g_utf8_collate(c->v, d->v);
+    return strcmp(c->v, d->v);
 }
 
 static int compare_str(const void *a, const void *b)
 {
     const char **c = (const char**)a;
     const char **d = (const char**)b;
-    return g_utf8_collate(*c, *d);
+    return strcmp(*c, *d);
 }
 
 void list_verbs(char *buffer)

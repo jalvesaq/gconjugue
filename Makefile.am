@@ -1,25 +1,27 @@
 ## Process this file with automake to produce Makefile.in
-## Created by Anjuta
+## Based on script created by Anjuta
 
 SUBDIRS = src po
-
-gconjuguedocdir = ${prefix}/share/doc/gconjugue
-gconjuguedoc_DATA = README.md
-
-man_MANS = data/gconjugue.1
-
-desktopdir = $(datadir)/applications
-desktop_DATA = data/gconjugue.desktop
-
-appicondir = $(datadir)/pixmaps
-appicon_DATA = data/gconjugue.png
 
 verbdir = $(libdir)/gconjugue
 verb_DATA = data/paradigms_and_verbs
 
-# INTLTOOL_FILES = intltool-extract.in \
-#         intltool-merge.in \
-#         intltool-update.in
+gconjuguedocdir = ${prefix}/share/doc/gconjugue
+gconjuguedoc_DATA = README.md
+
+man_MANS =
+
+if TUI
+  man_MANS += data/conjugar.1
+endif
+
+if GTKGUI
+  man_MANS += data/gconjugue.1
+  desktopdir = $(datadir)/applications
+  desktop_DATA = data/gconjugue.desktop
+  appicondir = $(datadir)/pixmaps
+  appicon_DATA = data/gconjugue.png
+endif
 
 EXTRA_DIST = $(gconjuguedoc_DATA) \
 	$(INTLTOOL_FILES)
@@ -28,7 +30,6 @@ DISTCLEANFILES = intltool-extract \
 	intltool-merge \
 	intltool-update \
 	po/.intltool-merge-cache
-
 
 # Remove doc directory on uninstall
 uninstall-local:

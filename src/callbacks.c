@@ -19,8 +19,8 @@
 #include <errno.h>
 
 #include "interface.h"
-#include "conjugue.h"
 #include "callbacks.h"
+#include "conjugue.h"
 
 
 static void write_info_in_cache_dir(const char *fname, const char *str)
@@ -280,6 +280,15 @@ void read_verb()
     gtk_editable_select_region(GTK_EDITABLE(e), 0, gtk_entry_get_text_length(e));
 }
 
+void on_btCommon_clicked()
+{
+    if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(btCommon)))
+        Normative = 0;
+    else
+        Normative = 1;
+    if(gtk_entry_get_text_length(GTK_ENTRY(entry1)) > 0)
+        read_verb();
+}
 
 GtkWidget *fdlg;
 

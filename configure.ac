@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Created by Anjuta application wizard.
 
-AC_INIT(gconjugue, 0.7.5)
+AC_INIT(gconjugue, 0.8.0)
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -11,7 +11,23 @@ AM_SILENT_RULES([yes])
 
 AC_PROG_CC
 
+AC_ARG_ENABLE([gtkgui],
+              [  --enable-gtkgui    Build gtk gui],
+              [case "${enableval}" in
+               yes) gtkgui=true ;;
+               no)  gtkgui=false ;;
+               *) AC_MSG_ERROR([bad value ${enableval} for --enable-gtkgui]) ;;
+           esac],[gtkgui=true])
+AM_CONDITIONAL([GTKGUI], [test x$gtkgui = xtrue])
 
+AC_ARG_ENABLE([tui],
+              [  --enable-tui    Build text interface],
+              [case "${enableval}" in
+               yes) tui=true ;;
+               no)  tui=false ;;
+               *) AC_MSG_ERROR([bad value ${enableval} for --enable-tui]) ;;
+           esac],[tui=true])
+AM_CONDITIONAL([TUI], [test x$tui = xtrue])
 
 
 dnl ***************************************************************************
@@ -27,7 +43,15 @@ AM_GLIB_GNU_GETTEXT
 
 LT_INIT
 
-PKG_CHECK_MODULES(GCONJUGUE, [gtk+-3.0 ])
+AS_CASE(["$gtkgui"],
+        [true], [PKG_CHECK_MODULES(GTK3, [gtk+-3.0 ])],
+        [false], [],
+        [PKG_CHECK_MODULES(GTK3, [gtk+-3.0 ])])
+
+AS_CASE(["$tui"],
+        [true], [AC_DEFINE(TUI, "1", "Enable TUI")],
+        [false], [],
+        [AC_DEFINE(TUI, "1", "Enable TUI")])
 
 AC_OUTPUT([
 Makefile

@@ -37,7 +37,7 @@ GtkWidget *miAbout;
 GtkWidget *hbox1;
 GtkWidget *entry1;
 GtkWidget *btConjg;
-GtkWidget *label1;
+GtkWidget *btCommon;
 GtkWidget *btFont;
 GtkWidget *scrolledwindow1;
 GtkWidget *textview1;
@@ -226,15 +226,17 @@ void create_main_window()
     gtk_box_pack_start(GTK_BOX(hbox1), btConjg, FALSE, FALSE, 0);
     gtk_button_set_focus_on_click(GTK_BUTTON(btConjg), FALSE);
 
-    label1 = gtk_label_new("      ");
-    gtk_box_pack_start(GTK_BOX(hbox1), label1, FALSE, TRUE, 0);
-    gtk_widget_show(label1);
-
-    btFont = gtk_button_new_with_label("A");
+    btFont = gtk_button_new_with_label("Aa");
     gtk_widget_set_tooltip_text (btFont, _("Set font"));
     gtk_widget_show(btFont);
-    gtk_box_pack_start(GTK_BOX(hbox1), btFont, FALSE, FALSE, 0);
+    gtk_box_pack_end(GTK_BOX(hbox1), btFont, FALSE, FALSE, 0);
     gtk_button_set_focus_on_click(GTK_BUTTON(btFont), FALSE);
+
+    btCommon = gtk_check_button_new_with_label("Br");
+    gtk_widget_set_tooltip_text (btCommon, _("Conjugate verbs as ordinary Brazilians do"));
+    gtk_widget_show(btCommon);
+    gtk_box_pack_end(GTK_BOX(hbox1), btCommon, FALSE, FALSE, 0);
+    gtk_button_set_focus_on_click(GTK_BUTTON(btCommon), FALSE);
 
     scrolledwindow1 = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_show(scrolledwindow1);
@@ -256,6 +258,7 @@ void create_main_window()
     g_signal_connect((gpointer)miAbout,    "activate",     G_CALLBACK(on_miAbout_activate),    NULL);
     g_signal_connect((gpointer)entry1,     "activate",     G_CALLBACK(read_verb),              NULL);
     g_signal_connect((gpointer)btConjg,    "clicked",      G_CALLBACK(read_verb),              NULL);
+    g_signal_connect((gpointer)btCommon,   "clicked",      G_CALLBACK(on_btCommon_clicked),    NULL);
     g_signal_connect((gpointer)btFont,     "clicked",      G_CALLBACK(on_btFont_clicked),      NULL);
 
     gtk_window_add_accel_group(GTK_WINDOW(mainWindow), accel_group);

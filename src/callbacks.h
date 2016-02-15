@@ -17,6 +17,7 @@ void on_miListV_activate();
 void on_miListP_activate();
 void on_miAbout_activate();
 void on_miContents_activate();
+void on_btCommon_clicked();
 void on_btFont_clicked();
 void read_verb();
 gboolean on_mainWindow_delete();
