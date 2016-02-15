@@ -125,52 +125,63 @@ void on_miListV_activate()
 
 void on_miContents_activate()
 {
-    char str[5000] = {0};
+    char str[8192] = {0};
     char tmp[1024] = {0};
     snprintf(str, 64, "\n\5%s\6\n\n", _("Help"));
     strncat(str, _("GConjugue loads at startup a dataset of some conjugated "
-    "verbs which are used as paradigms for conjugating the other verbs that are "
-    "in the dataset. Some verbs are explicitly listed as followers of a "
-    "paradigm, but others are only listed as existing verbs. The software will "
-    "try to deduce what paradigm should be used to conjugate these verbs as well "
-    "any other expression typed by the user."), 4999);
-    strncat(str, "\n\n", 4999);
+                "verbs which are used as paradigms for conjugating the other "
+                "verbs that are in the dataset. Some verbs are explicitly "
+                "listed as followers of a paradigm, but others are only "
+                "listed as existing verbs. The software will try to deduce "
+                "what paradigm should be used to conjugate these verbs as well "
+                "any other expression typed by the user."), 8191);
+    strncat(str, "\n\n", 8191);
     strncat(str, _("GConjugue presents the following information before the "
-    "conjugation of verbs:"), 4999);
-    strncat(str, "\n\n\3", 4999);
-    strncat(str, _("Paradigm: <verb>"), 4999);
-    strncat(str, "\6: ", 4999);
+                "conjugation of verbs:"), 8191);
+    strncat(str, "\n\n\3", 8191);
+    strncat(str, _("Paradigm: <verb>"), 8191);
+    strncat(str, "\6: ", 8191);
     strncat(str, _("Indicates what verb was used as paradigm for the "
-    "conjugation; either the verb itself is a paradigm or it is explicitly "
-    "listed as follower of a paradigm."), 4999);
-    strncat(str, "\n\n\3", 4999);
-    strncat(str, _("Deduced paradigm: <verb>"), 4999);
-    strncat(str, "\6: ", 4999);
+                "conjugation; either the verb itself is a paradigm or it is "
+                "explicitly listed as follower of a paradigm."), 8191);
+    strncat(str, "\n\n\3", 8191);
+    strncat(str, _("Deduced paradigm: <verb>"), 8191);
+    strncat(str, "\6: ", 8191);
     strncat(str, _("The verb is in the dataset, but it is not classified. Its "
-    "paradigm was “calculated” by the software."), 4999);
-    strncat(str, "\n\n\1", 4999);
-    strncat(str, _("Not in the verbs dataset"), 4999);
-    strncat(str, "\6: ", 4999);
+                "paradigm was “calculated” by the software."), 8191);
+    strncat(str, "\n\n\1", 8191);
+    strncat(str, _("Not in the verbs dataset"), 8191);
+    strncat(str, "\6: ", 8191);
     strncat(str, _("Although not in the dataset, the verb entered by the user "
-    "will be conjugated if it is possible to deduce its paradigm."), 4999);
-    strncat(str, "\n\n\1", 4999);
-    strncat(str, _("I cannot conjugate <verb>"), 4999);
-    strncat(str, "\6: ", 4999);
+                "will be conjugated if it is possible to deduce its paradigm."),
+            8191);
+    strncat(str, "\n\n\1", 8191);
+    strncat(str, _("I cannot conjugate <verb>"), 8191);
+    strncat(str, "\6: ", 8191);
     strncat(str, _("GConjugue could not guess what is the proper paradigm for "
-    "the expression the user entered. This should happen only when the expression "
-    "cannot be treated as verb in Portuguese, such as words that do not "
-    "end in ‘r’."), 4999);
-    strncat(str, "\n\n", 4999);
+                "the expression the user entered. This should happen only "
+                "when the expression cannot be treated as verb in "
+                "Portuguese, such as words that do not end in ‘r’."), 8191);
+    strncat(str, "\n\n", 8191);
+    strncat(str, _("GConjugue has the option of conjugating verbs as ordinary "
+                "Brazilians do (click on the “Br” check button). "
+                "In fact, Brazilians of different regions deviate from the "
+                "normative grammar in different ways, but the conjugation "
+                "displayed will already help foreigners to grasp what "
+                "Brazilians are saying."), 8191);
+    strncat(str, "\n\n", 8191);
     strncat(str, _("The number of existing paradigms in GConjugue dataset is "
-    "higher than the number of paradigms recognized by the Portuguese normative "
-    "grammar because GConjugue is not as smart as a human grammarian to apply general "
-    "rules to exceptional cases."), 4999);
-    strncat(str, "\n\n", 4999);
-    strncat(str, _("Verbs not classified in the dataset as followers of a paradigm have "
-            "their paradigms deduced through the comparison of its end with the "
-            "last letters of some verbs. The comparisons are made in the following "
-            "sequence, and are interrupted as soon as match is found:"), 4999);
-    strncat(str, "\n\n", 4999);
+                "higher than the number of paradigms recognized by the "
+                "Portuguese normative grammar because GConjugue is not as smart "
+                "as a human grammarian to apply general rules to exceptional "
+                "cases."), 8191);
+    strncat(str, "\n\n", 8191);
+    strncat(str, _("Verbs not classified in the dataset as followers of a "
+                "paradigm have their paradigms deduced through the "
+                "comparison of its end with the last letters of some verbs. "
+                "The comparisons are made in the following sequence, and are "
+                "interrupted as soon as match is found:"), 8191);
+    strncat(str, "\n\n", 8191);
     strncat(str, "   \4çar\6  abraçar\n"
             "   \4gar\6  chegar\n"
             "   \4car\6  comunicar\n"
@@ -191,30 +202,26 @@ void on_miContents_activate()
             "   \4zir\6  traduzir\n"
             "   \4ir\6  partir\n"
             "\n"
-            "   \4or\6  propor\n\n", 4999);
-    strncat(str, _("Currently, the dataset has:"), 4999);
-    strncat(str, "\n\n   ", 4999);
-    strncat(str, _("- Verbs treated as paradigms: "), 4999);
+            "   \4or\6  propor\n\n", 8191);
+    strncat(str, _("Currently, the dataset has:"), 8191);
+    strncat(str, "\n\n   ", 8191);
+    strncat(str, _("- Verbs treated as paradigms: "), 8191);
     sprintf(tmp, "%d", NP);
-    strncat(str, tmp, 4999);
-    strncat(str, "\n   ", 4999);
-    strncat(str, _("- Verbs following paradigms: "), 4999);
+    strncat(str, tmp, 8191);
+    strncat(str, "\n   ", 8191);
+    strncat(str, _("- Verbs following paradigms: "), 8191);
     sprintf(tmp, "%d", NVC);
-    strncat(str, tmp, 4999);
-    strncat(str, "\n   ", 4999);
-    strncat(str, _("- Verbs not classified yet: "), 4999);
+    strncat(str, tmp, 8191);
+    strncat(str, "\n   ", 8191);
+    strncat(str, _("- Verbs not classified yet: "), 8191);
     sprintf(tmp, "%d", NV - NVC);
-    strncat(str, tmp, 4999);
-    strncat(str, "\n\n", 4999);
+    strncat(str, tmp, 8191);
+    strncat(str, "\n\n", 8191);
     strncat(str, _("If you are curious to see the dataset of verbs, please, "
-    "open the file:"), 4999);
-    strncat(str, "\n\n   ", 4999);
-    strncat(str, verbsFile, 4999);
-    strncat(str, "\n\n", 4999);
-    strncat(str, _("GConjugue might also be run from a terminal emulator as a "
-    "text only application. If you want more information on this feature, do in "
-    "a terminal emulator:"), 4999);
-    strncat(str, "\n\n   man gconjugue\n", 4999);
+                "open the file:"), 8191);
+    strncat(str, "\n\n   ", 8191);
+    strncat(str, verbsFile, 8191);
+    strncat(str, "\n", 8191);
     set_text(str);
 }
 

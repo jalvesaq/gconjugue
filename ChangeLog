@@ -1,15 +1,17 @@
-2016-02-13 GCONJUGUE-0.8.0 released
+2016-02-15 GCONJUGUE-0.8.0 released
 
 	* data/paradigms_and_verbs: Renamed the file "BancoDeVerbos".
 
 	* Improvements:
 
-	  - Options for color and xml output in text mode.
-	  - Button to set font.
 	  - Seek for conjugated forms if the entered expression is not a verb
 	    in its infinitive form.
+	  - Option to conjugate verbs as ordinary Brazilians do.
+	  - Button to set font.
 	  - Rewrite in English all strings and provide Portuguese translations
 	    in the po files.
+	  - Split the software in two applications (GTK+) and Text only.
+	  - Options for color and xml output in text mode.
 
 2014-01-05 GCONJUGUE-0.7.5 released
 
