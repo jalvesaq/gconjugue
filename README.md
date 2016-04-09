@@ -76,6 +76,9 @@ If you do not need the Text User Interface, do:
 ./configure --enable-tui=no
 ```
 
+Note: Both applications are known to work in environments with UTF-8 character
+encoding.
+
 The file LeiaMe.md (in Portuguese) has additional information and some ideas
 for future development.
 
