@@ -59,7 +59,7 @@ static void initialize(int argc, char *argv[])
         int col = 0;
 
         for(int i = 1; i < argc; i++)
-            if(argv[i][0] == '-' && argv[i][1] == '-')
+            if(argv[i][0] == '-' && argv[i][1] == '-'){
                 if(strcmp(argv[i], "--color") == 0)
                     col = 1;
                 else if(strcmp(argv[i], "--xml") == 0)
@@ -72,6 +72,7 @@ static void initialize(int argc, char *argv[])
                             argv[i]);
                     exit(1);
                 }
+            }
 
         conjugue(argv[argc - 1], b1);
 
