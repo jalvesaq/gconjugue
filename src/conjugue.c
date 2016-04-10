@@ -332,14 +332,14 @@ static int get_verb_idx(const char *v)
 
 }
 
-static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn)
+static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn, const char *conj)
 {
     add_to_buffer(buffer, "\n\4");
     add_to_buffer(buffer, tempo);
     add_to_buffer(buffer, "\6\n");
 
     if(Normative){
-        if(t== 'a'){
+        if(t == 'a'){
             if(piece[0])
                 add_to_buffer(buffer, "   %s \2tu\6\n", piece[0]);
             if(piece[1])
@@ -350,7 +350,7 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   %s \2vós\6\n", piece[3]);
             if(piece[4])
                 add_to_buffer(buffer, "   %s \2eles\6\n", piece[4]);
-        } else if(t== 'n'){
+        } else if(t == 'n'){
             if(piece[0])
                 add_to_buffer(buffer, "   não %s \2tu\6\n", piece[0]);
             if(piece[1])
@@ -361,6 +361,19 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   não %s \2vós\6\n", piece[3]);
             if(piece[4])
                 add_to_buffer(buffer, "   não %s \2eles\6\n", piece[4]);
+        } else if(t == 's'){
+            if(piece[0])
+                add_to_buffer(buffer, "   %s \2eu\6 %s\n", conj, piece[0]);
+            if(piece[1])
+                add_to_buffer(buffer, "   %s \2tu\6 %s\n", conj, piece[1]);
+            if(piece[2])
+                add_to_buffer(buffer, "   %s \2ele\6 %s\n", conj, piece[2]);
+            if(piece[3])
+                add_to_buffer(buffer, "   %s \2nós\6 %s\n", conj, piece[3]);
+            if(piece[4])
+                add_to_buffer(buffer, "   %s \2vós\6 %s\n", conj, piece[4]);
+            if(piece[5])
+                add_to_buffer(buffer, "   %s \2eles\6 %s\n", conj, piece[5]);
         } else {
             if(piece[0])
                 add_to_buffer(buffer, "   \2eu\6 %s\n", piece[0]);
@@ -376,7 +389,7 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   \2eles\6 %s\n", piece[5]);
         }
     } else {
-        if(t== 'a'){
+        if(t == 'a'){
             if(piece[1])
                 add_to_buffer(buffer, "   %s \2você\6\n", piece[1]);
             if(piece[1])
@@ -387,7 +400,7 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   %s \2vocês\6\n", piece[4]);
             if(piece[4])
                 add_to_buffer(buffer, "   %s \2eles\6\n", piece[4]);
-        } else if(t== 'n'){
+        } else if(t == 'n'){
             if(piece[1])
                 add_to_buffer(buffer, "   não %s \2você\6\n", piece[1]);
             if(piece[1])
@@ -398,7 +411,7 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   não %s \2vocês\6\n", piece[4]);
             if(piece[4])
                 add_to_buffer(buffer, "   não %s \2eles\6\n", piece[4]);
-        } else if(t== 'm'){
+        } else if(t == 'm'){
             if(piece[0])
                 add_to_buffer(buffer, "   \2eu\6 tinha %s\n", fn[2]);
             if(piece[1])
@@ -411,7 +424,7 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   \2vocês\6 tinham %s\n", fn[2]);
             if(piece[5])
                 add_to_buffer(buffer, "   \2eles\6 tinham %s\n", fn[2]);
-        } else if(t== 'i'){
+        } else if(t == 'i'){
             if(piece[0])
                 add_to_buffer(buffer, "   \2eu\6 vou %s\n", fn[0]);
             if(piece[1])
@@ -424,6 +437,19 @@ static void add_tempo(char *buffer, char *tempo, char **piece, char t, char **fn
                 add_to_buffer(buffer, "   \2vocês\6 vão %s\n", fn[0]);
             if(piece[5])
                 add_to_buffer(buffer, "   \2eles\6 vão %s\n", fn[0]);
+        } else if(t == 's'){
+            if(piece[0])
+                add_to_buffer(buffer, "   %s \2eu\6 %s\n", conj, piece[0]);
+            if(piece[2])
+                add_to_buffer(buffer, "   %s \2você\6 %s\n", conj, piece[2]);
+            if(piece[2])
+                add_to_buffer(buffer, "   %s \2ele\6 %s\n", conj, piece[2]);
+            if(piece[2])
+                add_to_buffer(buffer, "   %s \2a gente\6 %s\n", conj, piece[2]);
+            if(piece[5])
+                add_to_buffer(buffer, "   %s \2vocês\6 %s\n", conj, piece[5]);
+            if(piece[5])
+                add_to_buffer(buffer, "   %s \2eles\6 %s\n", conj, piece[5]);
         } else {
             if(piece[0])
                 add_to_buffer(buffer, "   \2eu\6 %s\n", piece[0]);
@@ -570,18 +596,18 @@ void conjugue(char *verb, char *buffer)
     else
         add_to_buffer(buffer, "\n");
 
-    add_tempo(buffer, "Presente do Indicativo",            vv->PI,   0,   NULL);
-    add_tempo(buffer, "Imperfeito do Indicativo",          vv->II,   0,   NULL);
-    add_tempo(buffer, "Perfeito do Indicativo",            vv->EI,   0,   NULL);
-    add_tempo(buffer, "Mais-que-perfeito do Indicativo",   vv->MI, 'm', vv->FN);
-    add_tempo(buffer, "Futuro do Pretérito do Indicativo", vv->TI,   0,   NULL);
-    add_tempo(buffer, "Futuro do Presente do Indicativo",  vv->FI, 'i', vv->FN);
-    add_tempo(buffer, "Presente do Subjuntivo",            vv->PS,   0,   NULL);
-    add_tempo(buffer, "Imperfeito do Subjuntivo",          vv->IS,   0,   NULL);
-    add_tempo(buffer, "Futuro do Subjuntivo",              vv->FS,   0,   NULL);
-    add_tempo(buffer, "Imperativo Afirmativo",             vv->IA, 'a',   NULL);
-    add_tempo(buffer, "Imperativo Negativo",               vv->IN, 'n',   NULL);
-    add_tempo(buffer, "Infinitivo Pessoal",                vv->IP,   0,   NULL);
+    add_tempo(buffer, "Presente do Indicativo",            vv->PI,   0,   NULL, NULL);
+    add_tempo(buffer, "Imperfeito do Indicativo",          vv->II,   0,   NULL, NULL);
+    add_tempo(buffer, "Perfeito do Indicativo",            vv->EI,   0,   NULL, NULL);
+    add_tempo(buffer, "Mais-que-perfeito do Indicativo",   vv->MI, 'm', vv->FN, NULL);
+    add_tempo(buffer, "Futuro do Pretérito do Indicativo", vv->TI,   0,   NULL, NULL);
+    add_tempo(buffer, "Futuro do Presente do Indicativo",  vv->FI, 'i', vv->FN, NULL);
+    add_tempo(buffer, "Presente do Subjuntivo",            vv->PS, 's',   NULL, "que");
+    add_tempo(buffer, "Imperfeito do Subjuntivo",          vv->IS, 's',   NULL, "se");
+    add_tempo(buffer, "Futuro do Subjuntivo",              vv->FS, 's',   NULL, "quando");
+    add_tempo(buffer, "Imperativo Afirmativo",             vv->IA, 'a',   NULL, NULL);
+    add_tempo(buffer, "Imperativo Negativo",               vv->IN, 'n',   NULL, NULL);
+    add_tempo(buffer, "Infinitivo Pessoal",                vv->IP,   0,   NULL, NULL);
 
     free_conjugated_verb(vv);
 }
