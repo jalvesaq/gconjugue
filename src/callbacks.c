@@ -301,11 +301,19 @@ GtkWidget *fdlg;
 
 void on_font_selected()
 {
+    char fdcss[512];
     gchar *fdesc = gtk_font_chooser_get_font(GTK_FONT_CHOOSER(fdlg));
-    PangoFontDescription *font_desc = pango_font_description_from_string(fdesc);
-    // FIXME: gtk_widget_override_font is deprecated (see note in interface.c)
-    gtk_widget_override_font(textview1, font_desc);
-    pango_font_description_free(font_desc);
+    snprintf(fdcss, 511, "GtkTextView { font: %s; }", fdesc);
+
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+    gtk_style_context_add_provider_for_screen(screen,
+            GTK_STYLE_PROVIDER(provider),
+            GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    gtk_css_provider_load_from_data(provider, fdcss, -1, NULL);
+    g_object_unref(provider);
+
     write_info_in_cache_dir("font_desc", fdesc);
     strncpy(FontDesc, fdesc, 127);
     free(fdesc);

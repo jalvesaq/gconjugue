@@ -306,11 +306,17 @@ void create_main_window()
             for(i = 0; i < strlen(FontDesc); i++)
                 if(FontDesc[i] == '\n' || FontDesc[i] == '\r')
                     FontDesc[i] = 0;
-            PangoFontDescription *font_desc = pango_font_description_from_string(FontDesc);
-            // FIXME: The code below uses a deprecated function (GDK_DEPRECATED_IN_3_16)
-            // gedit still uses this function too (gedit-view.c, around line 1000).
-            gtk_widget_override_font(textview1, font_desc);
-            pango_font_description_free(font_desc);
+            char fdcss[512];
+            snprintf(fdcss, 511, "GtkTextView { font: %s; }", FontDesc);
+
+            GtkCssProvider *provider = gtk_css_provider_new();
+            GdkDisplay *display = gdk_display_get_default();
+            GdkScreen *screen = gdk_display_get_default_screen(display);
+            gtk_style_context_add_provider_for_screen(screen,
+                    GTK_STYLE_PROVIDER(provider),
+                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+            gtk_css_provider_load_from_data(provider, fdcss, -1, NULL);
+            g_object_unref(provider);
         }
         fclose(F);
     }
