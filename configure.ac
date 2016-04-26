@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl Created by Anjuta application wizard.
 
-AC_INIT(gconjugue, 0.8.0)
+AC_INIT(gconjugue, 0.8.1)
 
 AC_CONFIG_HEADERS([config.h])
 

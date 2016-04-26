@@ -1,3 +1,9 @@
+2016-04-26 GCONJUGUE-0.8.1 released
+
+	* data/paradigms_and_verbs: Fix conjugation of vir and advir.
+
+	* src/conjugue.c: Add que/se/quando to Subjuntivo conjugation.
+
 2016-02-15 GCONJUGUE-0.8.0 released
 
 	* data/paradigms_and_verbs: Renamed the file "BancoDeVerbos".
