@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-29 19:52-0300\n"
-"PO-Revision-Date: 2016-05-29 21:28-0300\n"
+"PO-Revision-Date: 2016-05-29 23:26-0300\n"
 "Last-Translator: lcapalbo <lucas.capalbo@gmail.com>\n"
 "Language-Team: Español; Castellano <>\n"
 "Language: Spanish\n"
@@ -31,7 +31,7 @@ msgstr "verbo"
 
 #: ../src/main.c:37
 msgid "Conjugate all verbs and exit"
-msgstr "Conjugar todos los vervos y salir"
+msgstr "Conjugar todos los verbos y salir"
 
 #: ../src/main.c:38
 #, c-format
