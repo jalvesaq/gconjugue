@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=GConjugue
+Name[es]=GConjugue
 Name[pt_BR]=GConjugue
 Comment=Conjugates Portuguese verbs
+Comment[es]=Conjuga verbos en portugués
 Comment[pt_BR]=Conjuga verbos em português
 Exec=gconjugue
 Terminal=0
