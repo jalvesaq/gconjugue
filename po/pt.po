@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-15 18:20-0300\n"
+"POT-Creation-Date: 2016-05-31 20:21-0300\n"
 "PO-Revision-Date: 2016-02-15 18:25-0300\n"
 "Last-Translator: Jakson Alves de Aquino <jalvesaq@gmail.com>\n"
 "Language-Team: Português <pt@li.org>\n"
@@ -41,7 +41,7 @@ msgstr "Saída colorida"
 msgid "Add XML tags to output"
 msgstr "Adicionar tags XLM ao resultado"
 
-#: ../src/main.c:41 ../src/interface.c:236
+#: ../src/main.c:41 ../src/interface.c:244
 msgid "Conjugate verbs as ordinary Brazilians do"
 msgstr "Conjugar verbos como os brasileiros comuns"
 
@@ -50,7 +50,7 @@ msgstr "Conjugar verbos como os brasileiros comuns"
 msgid "Invalid option for setting the output: %s\n"
 msgstr "Opção inválida para configuração do resultado: %s\n"
 
-#: ../src/main.c:90
+#: ../src/main.c:91
 #, c-format
 msgid "Too many arguments to conjugar!\n"
 msgstr "Número excessivo de argumentos!\n"
@@ -95,7 +95,7 @@ msgstr "_Sobre"
 msgid "conjugate"
 msgstr "conjugar"
 
-#: ../src/interface.c:230 ../src/callbacks.c:316
+#: ../src/interface.c:234 ../src/callbacks.c:324
 msgid "Set font"
 msgstr "Configure a fonte"
 
@@ -303,29 +303,29 @@ msgstr ""
 msgid "Maximo number of verbs surpassed!\n"
 msgstr "Número máximo de verbos superado!\n"
 
-#: ../src/conjugue.c:450
+#: ../src/conjugue.c:476
 msgid "The text you entered is too long.\n"
 msgstr "O texto digitado é muito longo.\n"
 
-#: ../src/conjugue.c:453
+#: ../src/conjugue.c:479
 msgid "The text you entered is too short.\n"
 msgstr "O texto digitado é muito curto.\n"
 
-#: ../src/conjugue.c:488 ../src/conjugue.c:492
+#: ../src/conjugue.c:514 ../src/conjugue.c:518
 msgid "The text you entered has invalid characters.\n"
 msgstr "O texto digitado tem caracteres inválidos.\n"
 
-#: ../src/conjugue.c:529
+#: ../src/conjugue.c:555
 #, c-format
 msgid "“%s” is not a verb or is not in the infinitive form.\n"
 msgstr "“%s” não é um verbo ou não está no infinitivo.\n"
 
-#: ../src/conjugue.c:539
+#: ../src/conjugue.c:565
 #, c-format
 msgid "“%s” is not in the verbs dataset.\n"
 msgstr "“%s” não consta do banco de verbos.\n"
 
-#: ../src/conjugue.c:543
+#: ../src/conjugue.c:569
 #, c-format
 msgid ""
 "Paradigm: %s\n"
@@ -334,7 +334,7 @@ msgstr ""
 "Paradigma: %s\n"
 "\n"
 
-#: ../src/conjugue.c:547
+#: ../src/conjugue.c:573
 #, c-format
 msgid ""
 "Deduced paradigm: %s\n"
@@ -343,12 +343,12 @@ msgstr ""
 "Paradigma deduzido: %s\n"
 "\n"
 
-#: ../src/conjugue.c:549
+#: ../src/conjugue.c:575
 #, c-format
 msgid "I do not know how to conjugate “%s”.\n"
 msgstr "Não sei conjugar “%s”.\n"
 
-#: ../src/conjugue.c:555
+#: ../src/conjugue.c:581
 #, c-format
 msgid ""
 "Note: “%s” is irregular and defective, being conjugated only in the third "
@@ -361,49 +361,49 @@ msgstr ""
 "todas as pessoas, por isso a conjugação completa é apresentada a seguir.\n"
 "\n"
 
-#: ../src/conjugue.c:610
+#: ../src/conjugue.c:636
 #, c-format
 msgid "Maximum number of paradigms surpassed!\n"
 msgstr "Número máximo de paradigmas superado!\n"
 
-#: ../src/conjugue.c:702
+#: ../src/conjugue.c:728
 #, c-format
 msgid "Error: \"%s\" not found.\n"
 msgstr "Erro: \"%s\" não encontrado.\n"
 
-#: ../src/conjugue.c:926 ../src/conjugue.c:944
+#: ../src/conjugue.c:952 ../src/conjugue.c:970
 msgid "list_of_paradigms"
 msgstr "lista_de_paradigmas"
 
-#: ../src/conjugue.c:931 ../src/conjugue.c:943
+#: ../src/conjugue.c:957 ../src/conjugue.c:969
 msgid "list_of_verbs"
 msgstr "lista_de_verbos"
 
-#: ../src/conjugue.c:932 ../src/conjugue.c:944
+#: ../src/conjugue.c:958 ../src/conjugue.c:970
 msgid "all_verbs"
 msgstr "todos_os_verbos"
 
-#: ../src/conjugue.c:942
+#: ../src/conjugue.c:968
 msgid "paradigms"
 msgstr "paradigmas"
 
-#: ../src/conjugue.c:942
+#: ../src/conjugue.c:968
 msgid "verbs"
 msgstr "verbos"
 
-#: ../src/conjugue.c:943
+#: ../src/conjugue.c:969
 #, c-format
 msgid "See the files: “%s”, “%s” and “%s”.\n"
 msgstr "Veja os ficheiros: “%s” “%s” e “%s”.\n"
 
-#: ../src/conjugue.c:971
+#: ../src/conjugue.c:997
 msgid "Paradigmatic verbs and their followers"
 msgstr "Verbos paradigmáticos e seus seguidores"
 
-#: ../src/conjugue.c:1004
+#: ../src/conjugue.c:1030
 msgid "Verbs with deduced paradigms"
 msgstr "Verbos com paradigmas deduzidos"
 
-#: ../src/conjugue.c:1038
+#: ../src/conjugue.c:1064
 msgid "Verbs used as paradigms"
 msgstr "Verbos usados como paradigmas"
