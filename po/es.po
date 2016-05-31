@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-29 19:52-0300\n"
-"PO-Revision-Date: 2016-05-29 23:26-0300\n"
+"PO-Revision-Date: 2016-05-31 20:19-0300\n"
 "Last-Translator: lcapalbo <lucas.capalbo@gmail.com>\n"
 "Language-Team: Español; Castellano <>\n"
 "Language: Spanish\n"
@@ -58,7 +58,7 @@ msgstr "Opción inválida para configuración de salida: %s\n"
 #: ../src/main.c:90
 #, c-format
 msgid "Too many arguments to conjugar!\n"
-msgstr "Demasiados argumentos a conjugar!"
+msgstr "Demasiados argumentos a conjugar!\n"
 
 #: ../src/interface.c:66
 msgid "GConjugue"
@@ -311,7 +311,7 @@ msgstr ""
 #: ../src/conjugue.c:318
 #, c-format
 msgid "Maximo number of verbs surpassed!\n"
-msgstr "Número máximo de verbos sobrepasado!"
+msgstr "Número máximo de verbos sobrepasado!\n"
 
 #: ../src/conjugue.c:450
 msgid "The text you entered is too long.\n"
@@ -374,7 +374,7 @@ msgstr ""
 #: ../src/conjugue.c:610
 #, c-format
 msgid "Maximum number of paradigms surpassed!\n"
-msgstr "Número máximo de paradigmas sobrepasado!"
+msgstr "Número máximo de paradigmas sobrepasado!\n"
 
 #: ../src/conjugue.c:702
 #, c-format
