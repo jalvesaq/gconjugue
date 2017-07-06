@@ -3,7 +3,7 @@
  ** It is distributed under the GNU General Public License.
  ** See the file COPYING for details.
  **
- ** (c) 2005-2016 Jakson Aquino: jalvesaq@gmail.com
+ ** (c) 2005-2017 Jakson Aquino: jalvesaq@gmail.com
  **
  ***************************************************************/
 
@@ -297,7 +297,7 @@ static void seek_conjugation(const char *s, char *buffer)
             add_to_buffer(buffer, _("\3“%s” was found among conjugated forms of 1 verb:\6\n\n"), s);
         else
             add_to_buffer(buffer, _("\3“%s” was found conjugated in %d verbs:\6\n\n"), s, found);
-            add_to_buffer(buffer, "%s", b2);
+        add_to_buffer(buffer, "%s", b2);
     } else {
         add_to_buffer(buffer, _("\1“%s” was not found among the conjugated forms of any verb.\6\n\n"), s);
     }
