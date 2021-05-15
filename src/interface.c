@@ -241,31 +241,19 @@ void create_main_window()
     btConjg = gtk_button_new_with_mnemonic(_("conjugate"));
     gtk_widget_show(btConjg);
     gtk_box_pack_start(GTK_BOX(hbox1), btConjg, FALSE, FALSE, 0);
-#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION < 20
-    gtk_button_set_focus_on_click(GTK_BUTTON(btConjg), FALSE);
-#else
     gtk_widget_set_focus_on_click(btConjg, FALSE);
-#endif
 
     btFont = gtk_button_new_with_label("Aa");
     gtk_widget_set_tooltip_text (btFont, _("Set font"));
     gtk_widget_show(btFont);
     gtk_box_pack_end(GTK_BOX(hbox1), btFont, FALSE, FALSE, 0);
-#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION < 20
-    gtk_button_set_focus_on_click(GTK_BUTTON(btFont), FALSE);
-#else
     gtk_widget_set_focus_on_click(btFont, FALSE);
-#endif
 
     btCommon = gtk_check_button_new_with_label("Br");
     gtk_widget_set_tooltip_text (btCommon, _("Conjugate verbs as ordinary Brazilians do"));
     gtk_widget_show(btCommon);
     gtk_box_pack_end(GTK_BOX(hbox1), btCommon, FALSE, FALSE, 0);
-#if GTK_MAJOR_VERSION == 3 && GTK_MINOR_VERSION < 20
-    gtk_button_set_focus_on_click(GTK_BUTTON(btCommon), FALSE);
-#else
     gtk_widget_set_focus_on_click(btCommon, FALSE);
-#endif
 
     scrolledwindow1 = gtk_scrolled_window_new(NULL, NULL);
     gtk_widget_show(scrolledwindow1);
