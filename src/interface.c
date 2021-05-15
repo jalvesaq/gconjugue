@@ -61,6 +61,7 @@ void set_font_css(const char *fdesc, char *fdcss)
             fstretch[pango_font_description_get_stretch(pfd)],
             pango_font_description_get_weight(pfd),
             fstyle[pango_font_description_get_style(pfd)]);
+    pango_font_description_free(pfd);
 }
 
 static gboolean on_match_select(GtkEntryCompletion *widget, GtkTreeModel *model,
