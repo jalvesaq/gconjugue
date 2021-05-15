@@ -16,5 +16,6 @@ extern GtkWidget *textview1;
 extern GtkWidget *btCommon;
 extern char FontDesc[128];
 extern int initWidth, initHeight;
+extern void set_font_css(const char *fdesc, char *fdcss);
 
 #endif

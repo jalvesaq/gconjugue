@@ -303,7 +303,7 @@ void on_font_selected()
 {
     char fdcss[512];
     gchar *fdesc = gtk_font_chooser_get_font(GTK_FONT_CHOOSER(fdlg));
-    snprintf(fdcss, 511, "GtkTextView { font: %s; }", fdesc);
+    set_font_css(fdesc,fdcss);
 
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();

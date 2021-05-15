@@ -47,6 +47,22 @@ GtkAccelGroup *accel_group;
 int initHeight = 550, initWidth = 300;
 char FontDesc[128];
 
+void set_font_css(const char *fdesc, char *fdcss)
+{
+    char *fstretch[9] = {"ultra-condensed", "extra-condensed", "condensed",
+        "semi-condensed", "normal", "semi-expanded", "expanded",
+        "extra-expanded", "ultra-expanded"};
+    char *fstyle[3] = {"normal", "oblique", "italic"};
+    PangoFontDescription *pfd = pango_font_description_from_string(fdesc);
+    snprintf(fdcss, 511, "textview { font-family: %s; font-size: %upx; "
+            "font-stretch: %s; font-weight: %u; font-style: %s; }",
+            pango_font_description_get_family(pfd),
+            pango_font_description_get_size(pfd) / 1000,
+            fstretch[pango_font_description_get_stretch(pfd)],
+            pango_font_description_get_weight(pfd),
+            fstyle[pango_font_description_get_style(pfd)]);
+}
+
 static gboolean on_match_select(GtkEntryCompletion *widget, GtkTreeModel *model,
         GtkTreeIter *iter, gpointer user_data)
 {  
@@ -319,7 +335,7 @@ void create_main_window()
                 if(FontDesc[i] == '\n' || FontDesc[i] == '\r')
                     FontDesc[i] = 0;
             char fdcss[512];
-            snprintf(fdcss, 511, "GtkTextView { font: %s; }", FontDesc);
+            set_font_css(FontDesc, fdcss);
 
             GtkCssProvider *provider = gtk_css_provider_new();
             GdkDisplay *display = gdk_display_get_default();
@@ -335,4 +351,3 @@ void create_main_window()
 
     gtk_widget_show(mainWindow);
 }
-
