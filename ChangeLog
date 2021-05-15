@@ -1,3 +1,7 @@
+2020-05-15 GCONJUGUE-0.8.5 released
+
+	* Bug fixes: Memory leak and compiler warning.
+
 2020-05-15 GCONJUGUE-0.8.4 released
 
 	* Buf fix: Make font setting work again.
