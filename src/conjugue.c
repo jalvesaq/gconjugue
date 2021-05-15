@@ -210,7 +210,7 @@ static void seek_deep(const char *what, char **where, char *tempo, int n, char f
     char *pron5[5] =       {"tu", "ele", "nós", "vós", "eles"};
     char *pron6[6] = {"eu", "tu", "ele", "nós", "vós", "eles"};
     char **pron;
-    char msg[1024];
+    char msg[512];
     if(n == 5)
         pron = pron5;
     else
@@ -218,12 +218,12 @@ static void seek_deep(const char *what, char **where, char *tempo, int n, char f
     for(int i = 0; i < n; i++){
         if(where[i] && strcmp(where[i], what) == 0){
             if(f == 'g')
-                snprintf(msg, 1023, "%s: \2%s\6 %s\n", tempo, pron[i], what);
+                snprintf(msg, 500, "%s: \2%s\6 %s\n", tempo, pron[i], what);
             else if(f == 'p')
-                snprintf(msg, 1023, "%s: %s \2%s\6\n", tempo, what, pron[i]);
+                snprintf(msg, 500, "%s: %s \2%s\6\n", tempo, what, pron[i]);
             else
-                snprintf(msg, 1023, "%s: não %s \2%s\6\n", tempo, what, pron[i]);
-            strncat(b, msg, 2047);
+                snprintf(msg, 500, "%s: não %s \2%s\6\n", tempo, what, pron[i]);
+            strncat(b, msg, 1023);
         }
     }
 }
@@ -271,10 +271,12 @@ static void seek_conjugation(const char *s, char *buffer)
 {
     int i;
     ConjugatedVerb *vv;
-    char b[2048];
+    char b[1024];
     char b1[2048];
-    char b2[2048] = {0};
+    char b2[4096] = {0};
     int found = 0;
+
+    memset(b, 0, 1024);
     for(i = 0; i < NV; i++)
         if(Vrb[i].v[0] == s[0] || strcmp(Vrb[i].v, "ser") == 0 ||
                 strcmp(Vrb[i].v, "ir") == 0 || strcmp(Vrb[i].v, "aguar") == 0){
@@ -283,12 +285,12 @@ static void seek_conjugation(const char *s, char *buffer)
             else
                 vv = conjugate_one(Vrb[i].v, deduce_paradigm(Vrb[i].v), Vrb[i].a);
 
-            memset(b, 0, 1024);
             seek_inside(vv, s, b);
             if(strlen(b) > 0){
                 found++;
                 snprintf(b1, 2047, "\4%s\6:\n%s\n", Vrb[i].v, b);
-                strncat(b2, b1, 2047);
+                strncat(b2, b1, 4000);
+                memset(b, 0, 1024);
             }
             free_conjugated_verb(vv);
         }
