@@ -307,10 +307,17 @@ void create_main_window()
     gtk_window_set_default_size(GTK_WINDOW(mainWindow), initWidth, initHeight);
     gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(textview1), GTK_WRAP_WORD);
     GtkTextBuffer *buf =  gtk_text_view_get_buffer(GTK_TEXT_VIEW(textview1));
+    GtkTextAttributes *tattr = gtk_text_view_get_default_attributes(GTK_TEXT_VIEW(textview1));
     gtk_text_buffer_create_tag(buf, "bold", "weight", PANGO_WEIGHT_BOLD, NULL);
-    gtk_text_buffer_create_tag(buf, "red", "foreground", "red", NULL);
-    gtk_text_buffer_create_tag(buf, "blue", "foreground", "blue", NULL);
-    gtk_text_buffer_create_tag(buf, "green", "foreground", "green", NULL);
+    if ((tattr->appearance.bg_color.red + tattr->appearance.bg_color.green + tattr->appearance.bg_color.blue) > 98302) {
+        gtk_text_buffer_create_tag(buf, "red", "foreground", "red", NULL);
+        gtk_text_buffer_create_tag(buf, "blue", "foreground", "blue", NULL);
+        gtk_text_buffer_create_tag(buf, "green", "foreground", "green", NULL);
+    } else {
+        gtk_text_buffer_create_tag(buf, "red", "foreground", "#ff5555", NULL);
+        gtk_text_buffer_create_tag(buf, "blue", "foreground", "lightblue", NULL);
+        gtk_text_buffer_create_tag(buf, "green", "foreground", "lightgreen", NULL);
+    }
     gtk_text_buffer_create_tag(buf, "large", "scale", PANGO_SCALE_LARGE, NULL);
 
     /* Set text viewer font */
