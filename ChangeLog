@@ -1,10 +1,14 @@
+2025-05-02 GCONJUGUE-0.8.6 released
+
+	* Minor improvement: Different colors for dark themes.
+
 2020-05-15 GCONJUGUE-0.8.5 released
 
 	* Bug fixes: Memory leak and compiler warning.
 
 2020-05-15 GCONJUGUE-0.8.4 released
 
-	* Buf fix: Make font setting work again.
+	* Bug fix: Make font setting work again.
 
 2017-07-06 GCONJUGUE-0.8.3 released
 
