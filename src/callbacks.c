@@ -3,7 +3,7 @@
  ** It is distributed under the GNU General Public License.
  ** See the file COPYING for details.
  **
- ** (c) 2005-2017 Jakson Aquino: jalvesaq@gmail.com
+ ** (c) 2005-2025 Jakson Aquino: jalvesaq@gmail.com
  **
  ***************************************************************/
 
@@ -231,7 +231,7 @@ void on_miAbout_activate()
     dialog = gtk_message_dialog_new(GTK_WINDOW(mainWindow),
             GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
             GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
-            _("gconjugue %s\n(c) 2005-2017 Jakson A. Aquino <jalvesaq@gmail.com>\n\n"
+            _("gconjugue %s\n(c) 2005-2025 Jakson A. Aquino <jalvesaq@gmail.com>\n\n"
                 "gconjugue is based on \"conjugue\", "
                 "which was developed by Ricardo Ueda Karpischek\n\n"
                 "gconjugue is free software under GNU GPL license.\n\n"

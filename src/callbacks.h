@@ -3,7 +3,7 @@
  ** It is distributed under the GNU General Public License.
  ** See the file COPYING for details.
  **
- ** (c) 2005-2017 Jakson Aquino: jalvesaq@gmail.com
+ ** (c) 2005-2025 Jakson Aquino: jalvesaq@gmail.com
  **
  ***************************************************************/
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-06 11:13-0300\n"
+"POT-Creation-Date: 2025-06-08 21:17-0300\n"
 "PO-Revision-Date: 2017-07-06 11:13-0300\n"
 "Last-Translator: lcapalbo <lucas.capalbo@gmail.com>\n"
 "Language-Team: Español; Castellano <>\n"
@@ -46,7 +46,7 @@ msgstr "Salida a color"
 msgid "Add XML tags to output"
 msgstr "Agregar tags XML a la salida"
 
-#: ../src/main.c:41 ../src/interface.c:244
+#: ../src/main.c:41 ../src/interface.c:253
 msgid "Conjugate verbs as ordinary Brazilians do"
 msgstr "Conjugar verbos en brasileño coloquial"
 
@@ -60,47 +60,47 @@ msgstr "Opción inválida para configuración de salida: %s\n"
 msgid "Too many arguments to conjugar!\n"
 msgstr "Demasiados argumentos a conjugar!\n"
 
-#: ../src/interface.c:66
+#: ../src/interface.c:83
 msgid "GConjugue"
 msgstr "GConjugue"
 
-#: ../src/interface.c:155
+#: ../src/interface.c:172
 msgid "_Program"
 msgstr "_Programa"
 
-#: ../src/interface.c:162
+#: ../src/interface.c:179
 msgid "Set _font"
 msgstr "Configurar _fuente"
 
-#: ../src/interface.c:166
+#: ../src/interface.c:183
 msgid "List all _paradigms"
 msgstr "Listar todos los _paradigmas"
 
-#: ../src/interface.c:170
+#: ../src/interface.c:187
 msgid "List all _verbs"
 msgstr "Listar todos los _verbos"
 
-#: ../src/interface.c:174
+#: ../src/interface.c:191
 msgid "_Quit"
 msgstr "_Salir"
 
-#: ../src/interface.c:180
+#: ../src/interface.c:197
 msgid "_Help"
 msgstr "_Ayuda"
 
-#: ../src/interface.c:187
+#: ../src/interface.c:204
 msgid "_Contents"
 msgstr "_Contenidos"
 
-#: ../src/interface.c:191
+#: ../src/interface.c:208
 msgid "_About"
 msgstr "_Acerca de"
 
-#: ../src/interface.c:224
+#: ../src/interface.c:241
 msgid "conjugate"
 msgstr "Conjugar"
 
-#: ../src/interface.c:234 ../src/callbacks.c:324
+#: ../src/interface.c:247 ../src/callbacks.c:324
 msgid "Set font"
 msgstr "Configurar fuente"
 
@@ -249,7 +249,7 @@ msgstr ""
 #, c-format
 msgid ""
 "gconjugue %s\n"
-"(c) 2005-2017 Jakson A. Aquino <jalvesaq@gmail.com>\n"
+"(c) 2005-2025 Jakson A. Aquino <jalvesaq@gmail.com>\n"
 "\n"
 "gconjugue is based on \"conjugue\", which was developed by Ricardo Ueda "
 "Karpischek\n"
@@ -260,7 +260,7 @@ msgid ""
 "https://github.com/jalvesaq/gconjugue"
 msgstr ""
 "gconjugue %s\n"
-"© 2005-2017 Jakson A. Aquino <jalvesaq@gmail.com>\n"
+"© 2005-2025 Jakson A. Aquino <jalvesaq@gmail.com>\n"
 "\n"
 "gconjugue está basado en “conjugue”, desarrollado por Ricardo Ueda "
 "Karpischek\n"
@@ -281,7 +281,7 @@ msgstr ""
 msgid "GConjugue internal error: Invalid unicode characters!"
 msgstr "Error interno de GConjugue: Caracteres Unicode inválidos!"
 
-#: ../src/conjugue.c:297
+#: ../src/conjugue.c:299
 #, c-format
 msgid ""
 "“%s” was found among conjugated forms of 1 verb:\n"
@@ -290,7 +290,7 @@ msgstr ""
 "“%s” fue encontrado entre las formas conjugadas de 1 verbo:\n"
 "\n"
 
-#: ../src/conjugue.c:299
+#: ../src/conjugue.c:301
 #, c-format
 msgid ""
 "“%s” was found conjugated in %d verbs:\n"
@@ -299,7 +299,7 @@ msgstr ""
 "“%s” fue encontrado conjugado en %d verbos:\n"
 "\n"
 
-#: ../src/conjugue.c:302
+#: ../src/conjugue.c:304
 #, c-format
 msgid ""
 "“%s” was not found among the conjugated forms of any verb.\n"
@@ -308,34 +308,34 @@ msgstr ""
 "“%s” no fue encontrado entre las formas conjugadas de ningún verbo.\n"
 "\n"
 
-#: ../src/conjugue.c:318
+#: ../src/conjugue.c:320
 #, c-format
 msgid "Maximo number of verbs surpassed!\n"
 msgstr "Número máximo de verbos sobrepasado!\n"
 
-#: ../src/conjugue.c:476
+#: ../src/conjugue.c:478
 msgid "The text you entered is too long.\n"
 msgstr "El texto ingresado es demasiado largo.\n"
 
-#: ../src/conjugue.c:479
+#: ../src/conjugue.c:481
 msgid "The text you entered is too short.\n"
 msgstr "El texto ingresado es demasiado corto.\n"
 
-#: ../src/conjugue.c:514 ../src/conjugue.c:518
+#: ../src/conjugue.c:516 ../src/conjugue.c:520
 msgid "The text you entered has invalid characters.\n"
 msgstr "El texto ingresado contiene caracteres inválidos.\n"
 
-#: ../src/conjugue.c:555
+#: ../src/conjugue.c:557
 #, c-format
 msgid "“%s” is not a verb or is not in the infinitive form.\n"
 msgstr "“%s” no es un verbo o no está en modo infinitivo.\n"
 
-#: ../src/conjugue.c:565
+#: ../src/conjugue.c:567
 #, c-format
 msgid "“%s” is not in the verbs dataset.\n"
 msgstr "“%s” no se encuentra en la base de datos.\n"
 
-#: ../src/conjugue.c:569
+#: ../src/conjugue.c:571
 #, c-format
 msgid ""
 "Paradigm: %s\n"
@@ -344,7 +344,7 @@ msgstr ""
 "Paradigma: %s\n"
 "\n"
 
-#: ../src/conjugue.c:573
+#: ../src/conjugue.c:575
 #, c-format
 msgid ""
 "Deduced paradigm: %s\n"
@@ -353,12 +353,12 @@ msgstr ""
 "Paradigma deducido: %s\n"
 "\n"
 
-#: ../src/conjugue.c:575
+#: ../src/conjugue.c:577
 #, c-format
 msgid "I do not know how to conjugate “%s”.\n"
 msgstr "Incapaz de conjugar “%s”.\n"
 
-#: ../src/conjugue.c:581
+#: ../src/conjugue.c:583
 #, c-format
 msgid ""
 "Note: “%s” is irregular and defective, being conjugated only in the third "
@@ -371,49 +371,49 @@ msgstr ""
 "completa porque “%s-se” está conjugado en todas las personas.\n"
 "\n"
 
-#: ../src/conjugue.c:636
+#: ../src/conjugue.c:638
 #, c-format
 msgid "Maximum number of paradigms surpassed!\n"
 msgstr "Número máximo de paradigmas sobrepasado!\n"
 
-#: ../src/conjugue.c:728
+#: ../src/conjugue.c:730
 #, c-format
 msgid "Error: \"%s\" not found.\n"
 msgstr "Error: \"%s\" no encontrado.\n"
 
-#: ../src/conjugue.c:952 ../src/conjugue.c:970
+#: ../src/conjugue.c:954 ../src/conjugue.c:972
 msgid "list_of_paradigms"
 msgstr "lista_de_paradigmas"
 
-#: ../src/conjugue.c:957 ../src/conjugue.c:969
+#: ../src/conjugue.c:959 ../src/conjugue.c:971
 msgid "list_of_verbs"
 msgstr "lista_de_verbos"
 
-#: ../src/conjugue.c:958 ../src/conjugue.c:970
+#: ../src/conjugue.c:960 ../src/conjugue.c:972
 msgid "all_verbs"
 msgstr "todos_los_verbos"
 
-#: ../src/conjugue.c:968
+#: ../src/conjugue.c:970
 msgid "paradigms"
 msgstr "paradigmas"
 
-#: ../src/conjugue.c:968
+#: ../src/conjugue.c:970
 msgid "verbs"
 msgstr "verbos"
 
-#: ../src/conjugue.c:969
+#: ../src/conjugue.c:971
 #, c-format
 msgid "See the files: “%s”, “%s” and “%s”.\n"
 msgstr "Vea los archivos: “%s”, “%s” y “%s”.\n"
 
-#: ../src/conjugue.c:997
+#: ../src/conjugue.c:999
 msgid "Paradigmatic verbs and their followers"
 msgstr "Verbos paradigmáticos y sus seguidores"
 
-#: ../src/conjugue.c:1030
+#: ../src/conjugue.c:1032
 msgid "Verbs with deduced paradigms"
 msgstr "Verbos con paradigmas deducidos"
 
-#: ../src/conjugue.c:1064
+#: ../src/conjugue.c:1066
 msgid "Verbs used as paradigms"
 msgstr "Verbos utilizados como paradigmas"
